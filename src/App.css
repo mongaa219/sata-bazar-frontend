@@ -6,6 +6,20 @@
   height: 40vmin;
   pointer-events: none;
 }
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+.ns-form{
+  padding: 15% 30%;
+}
+.ns-form form input {
+  border: 1px solid;
+}
+.loader-ns {
+  left: 50%;
+  margin-left: -4em;
+  z-index: 99999999999;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
