@@ -91,9 +91,9 @@ const Home = (props) => {
                                             <td>{ ls.title }</td>
                                             <td>{ ls.description }</td>
                                             <td>{ Moment(ls.resultDate).format('YYYY-MM-DD hh:mm A') }</td>
-                                            <td>{ ls.resultA }</td>
-                                            <td>{ ls.resultB || '-' }</td>
-                                            <td>{ ls.resultC || '-' }</td>
+                                            <td>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
+                                            <td>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
+                                            <td>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>
                                             <td>
                                                 <Link to={'/edit/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />
