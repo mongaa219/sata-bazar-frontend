@@ -21,6 +21,12 @@ return (
 		<NavLink to='/home' >
 			Home
 		</NavLink>
+		<NavLink to='/home-city' >
+			City Data
+		</NavLink>
+		<NavLink to='/announcement' >
+			Announcement
+		</NavLink>
 		<NavLink to='/logout' >
 			Logout
 		</NavLink>

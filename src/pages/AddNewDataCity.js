@@ -1,14 +1,13 @@
 import {React, useEffect, useState} from 'react';
 import axios from "axios";
-import { Navigate, useParams } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 import { Table, Nav ,Spinner, Modal, Button, Form} from 'react-bootstrap'
 import Moment from 'moment';
 import DateTimePicker from 'react-datetime-picker';
 
 
 
-const EditData = (props) => {
-    const {id} = useParams();
+const AddNewDataCity = (props) => {
     const [isLoading,setisLoading] = useState(false);
     const [sattaList, setSattaList] = useState([])
     const [title, setTitle] = useState('');
@@ -17,49 +16,12 @@ const EditData = (props) => {
     const [resultA, setResultA] = useState(0);
     const [resultB, setResultB] = useState(0);
     const [resultC, setResultC] = useState(0);
+    const [resultD, setResultD] = useState(0);
+    const [resultE, setResultE] = useState(0);
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
-
-    // const { id } = useParams();
-    // console.log(props.history);
-    const getSataOne = async (id) => {
-        let token = localStorage.getItem('loginToken')
-        const headers = {
-            'Content-Type': 'application/json',
-            'token': token
-          }
-          await axios.get(URL+'/api/admin/get/'+id,{
-              headers : headers
-          }).then((data) => {
-            setisLoading(false)
-            if(!data.data){
-                alert('Data not found !');
-                return false;
-            } 
-            console.log(data.data);
-            setSattaList(data.data.sattaList);
-            setTitle(data.data.title);
-            setDescription(data.data.description);
-            setResultDate(Moment(data.data.resultDate).toDate());
-            // console.log('d string ',Moment(data.data.resultDate).toDate());
-            setResultA(data.data.resultA);
-            setResultB(data.data.resultB);
-            setResultC(data.data.resultC);
-
-          }).catch((er) => {
-              console.log(er);
-              if (er.response.status == 401) {
-                  console.log('getting eror ');
-                  console.log(er.response.status);
-                //   props.history.push("/login");
-                 window.location.href = '/login'
-              }
-              else{
-                  alert('facing some error')
-              }
-          })
-      }
+    
   const sattaAdd = async (e) => {
     //   e.preveventDefault();
         setisLoading(true);
@@ -70,7 +32,9 @@ const EditData = (props) => {
         resultDate : resultDate,
         resultA : resultA,
         resultB : resultB,
-        resultC : resultC
+        resultC : resultC,
+        resultD : resultD,
+        resultE : resultE
       };
       let token = localStorage.getItem('loginToken')
     const headers = {
@@ -79,7 +43,7 @@ const EditData = (props) => {
       }
       console.log(headers);
       console.log(submit_data);
-      await axios.post(URL+'/api/admin/satta/'+id,submit_data,{
+      await axios.post(URL+'/api/admin/city/satta',submit_data,{
           headers : headers
       }).then((data) => {
         setisLoading(false)
@@ -90,7 +54,7 @@ const EditData = (props) => {
             return false;
         }
         alert(data.data.message || 'Some error !!');
-        // window.location.href = '/home'
+        window.location.href = '/home-city'
       }).catch((er) => {
           console.log('error ',er);
           setisLoading(false)
@@ -98,7 +62,7 @@ const EditData = (props) => {
       })
   }
   useEffect(() => {
-    getSataOne(id);
+    // getList();
     let token = localStorage.getItem('loginToken')
     if(!token)
     {
@@ -113,29 +77,39 @@ const EditData = (props) => {
                     <form onSubmit={sattaAdd}>
                         <div className="mb-3 mt-3">
                             <label >Title</label>
-                            <input type="text" className="form-control"  placeholder="Enter Title" name="title" onChange={(e) => setTitle(e.target.value)} value={title}/>
+                            <input type="text" className="form-control"  placeholder="Enter Title" name="title" onChange={(e) => setTitle(e.target.value)}/>
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Description</label>
-                            <textarea className="form-control"  placeholder="Enter Title" name="Description" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
+                            <textarea className="form-control"  placeholder="Enter Title" name="Description" onChange={(e) => setDescription(e.target.value)}></textarea>
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result Date:</label>
                             <DateTimePicker 
                                 className={'form-control'}
-                                onChange={setResultDate} value={resultDate} minDate={new Date()}/>
+                                onChange={(date) => { 
+                                    console.log(date);
+                                    setResultDate(date) }} value={resultDate} minDate={new Date()}/>
                         </div>
                         <div className="mb-3 mt-3">
-                            <label >Result A</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultA" onChange={(e) => setResultA(e.target.value)} value={resultA}/>
+                            <label >Disawer</label>
+                            <input type="number" className="form-control"  name="resultA" onChange={(e) => setResultA(e.target.value)} value={resultA}/>
                         </div>
                         <div className="mb-3 mt-3">
-                            <label >Result B:</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultB" onChange={(e) => setResultB(e.target.value)} value={resultB}/>
+                            <label >Fridabad</label>
+                            <input type="number" className="form-control"  name="resultB" onChange={(e) => setResultB(e.target.value)} value={resultB}/>
                         </div>
                         <div className="mb-3 mt-3">
-                            <label >Result C:</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultC" onChange={(e) => setResultC(e.target.value)} value={resultC}/>
+                            <label >Gaziyabad</label>
+                            <input type="number" className="form-control"  name="resultC" onChange={(e) => setResultC(e.target.value)} value={resultC}/>
+                        </div>
+                        <div className="mb-3 mt-3">
+                            <label >Gali</label>
+                            <input type="number" className="form-control"  name="resultD" onChange={(e) => setResultD(e.target.value)} value={resultD}/>
+                        </div>
+                        <div className="mb-3 mt-3">
+                            <label >Nva Savera</label>
+                            <input type="number" className="form-control"  name="resultE" onChange={(e) => setResultE(e.target.value)} value={resultE}/>
                         </div>
                         <button type="submit" className="btn btn-primary">
                             {!isLoading && 'Submit'}
@@ -153,4 +127,4 @@ const EditData = (props) => {
   );
 }
 
-export default EditData;
+export default AddNewDataCity;

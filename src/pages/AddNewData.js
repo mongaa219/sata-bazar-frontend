@@ -16,6 +16,9 @@ const AddNewData = (props) => {
     const [resultA, setResultA] = useState(0);
     const [resultB, setResultB] = useState(0);
     const [resultC, setResultC] = useState(0);
+
+    // const URL = 'http://localhost:3003'
+    const URL = 'https://satta-backend.herokuapp.com'
     
   const sattaAdd = async (e) => {
     //   e.preveventDefault();
@@ -36,7 +39,7 @@ const AddNewData = (props) => {
       }
       console.log(headers);
       console.log(submit_data);
-      await axios.post('https://satta-backend.herokuapp.com/api/admin/satta',submit_data,{
+      await axios.post(URL+'/api/admin/satta',submit_data,{
           headers : headers
       }).then((data) => {
         setisLoading(false)

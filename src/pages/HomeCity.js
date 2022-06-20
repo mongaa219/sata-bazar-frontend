@@ -14,9 +14,10 @@ import { faCoffee, faEdit } from '@fortawesome/free-solid-svg-icons'
 // npm install --save @fortawesome/react-fontawesome
 
 
-const Home = (props) => {
+const HomeCity = (props) => {
     const [isLoading,setisLoading] = useState(true);
     const [sattaList, setSattaList] = useState([])
+
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
   
@@ -26,7 +27,7 @@ const Home = (props) => {
         'Content-Type': 'application/json',
         'token': token
       }
-      await axios.get(URL+'/api/admin/get',{
+      await axios.get(URL+'/api/admin/city/get',{
           headers : headers
       }).then((data) => {
         setisLoading(false)
@@ -56,7 +57,7 @@ const Home = (props) => {
                             </center>
                         </div>
                         <div className='col-md-1'>
-                            <Link to="/add" className='white' >
+                            <Link to="/add-city" className='white' >
                                 <button className='btn btn-primary'>
                                     Add New
                                 </button>
@@ -79,9 +80,11 @@ const Home = (props) => {
                                     <th>Title</th>
                                     <th>Description</th>
                                     <th>Date Time</th>
-                                    <th>Result A</th>
-                                    <th>Result B</th>
-                                    <th>Result C</th>
+                                    <th>Disawer</th>
+                                    <th>Fridabad</th>
+                                    <th>Gaziyabad</th>
+                                    <th>Gali</th>
+                                    <th>Nva Savera</th>
                                     <th>Action</th>
                                     </tr>
                                 </thead>
@@ -96,8 +99,10 @@ const Home = (props) => {
                                             <td>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
                                             <td>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
                                             <td>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>
+                                            <td>{ (!ls.resultD || ls.resultD == 0) ? '-' : ls.resultD }</td>
+                                            <td>{ (!ls.resultE || ls.resultE == 0) ? '-' : ls.resultE }</td>
                                             <td>
-                                                <Link to={'/edit/'+ls._id}>
+                                                <Link to={'/edit-city/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />
                                                 </Link>
                                             </td>
@@ -116,4 +121,4 @@ const Home = (props) => {
   );
 }
 
-export default Home;
+export default HomeCity;

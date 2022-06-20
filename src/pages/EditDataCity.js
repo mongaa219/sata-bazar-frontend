@@ -17,6 +17,8 @@ const EditData = (props) => {
     const [resultA, setResultA] = useState(0);
     const [resultB, setResultB] = useState(0);
     const [resultC, setResultC] = useState(0);
+    const [resultD, setResultD] = useState(0);
+    const [resultE, setResultE] = useState(0);
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
@@ -29,7 +31,7 @@ const EditData = (props) => {
             'Content-Type': 'application/json',
             'token': token
           }
-          await axios.get(URL+'/api/admin/get/'+id,{
+          await axios.get(URL+'/api/admin/city/get/'+id,{
               headers : headers
           }).then((data) => {
             setisLoading(false)
@@ -46,6 +48,8 @@ const EditData = (props) => {
             setResultA(data.data.resultA);
             setResultB(data.data.resultB);
             setResultC(data.data.resultC);
+            setResultD(data.data.resultD);
+            setResultE(data.data.resultE);
 
           }).catch((er) => {
               console.log(er);
@@ -66,11 +70,12 @@ const EditData = (props) => {
       e.preventDefault();
       let submit_data = {
         title : title,
-        description : description,
         resultDate : resultDate,
         resultA : resultA,
         resultB : resultB,
-        resultC : resultC
+        resultC : resultC,
+        resultD : resultD,
+        resultE : resultE
       };
       let token = localStorage.getItem('loginToken')
     const headers = {
@@ -79,7 +84,8 @@ const EditData = (props) => {
       }
       console.log(headers);
       console.log(submit_data);
-      await axios.post(URL+'/api/admin/satta/'+id,submit_data,{
+    //   https://satta-backend.herokuapp.com
+      await axios.post(URL+'/api/admin/city/satta/'+id,submit_data,{
           headers : headers
       }).then((data) => {
         setisLoading(false)
@@ -116,10 +122,6 @@ const EditData = (props) => {
                             <input type="text" className="form-control"  placeholder="Enter Title" name="title" onChange={(e) => setTitle(e.target.value)} value={title}/>
                         </div>
                         <div className="mb-3 mt-3">
-                            <label >Description</label>
-                            <textarea className="form-control"  placeholder="Enter Title" name="Description" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
-                        </div>
-                        <div className="mb-3 mt-3">
                             <label >Result Date:</label>
                             <DateTimePicker 
                                 className={'form-control'}
@@ -130,12 +132,20 @@ const EditData = (props) => {
                             <input type="number" className="form-control"  placeholder="Enter Title" name="resultA" onChange={(e) => setResultA(e.target.value)} value={resultA}/>
                         </div>
                         <div className="mb-3 mt-3">
-                            <label >Result B:</label>
+                            <label >Gali</label>
                             <input type="number" className="form-control"  placeholder="Enter Title" name="resultB" onChange={(e) => setResultB(e.target.value)} value={resultB}/>
                         </div>
                         <div className="mb-3 mt-3">
-                            <label >Result C:</label>
+                            <label >Nva Savera</label>
                             <input type="number" className="form-control"  placeholder="Enter Title" name="resultC" onChange={(e) => setResultC(e.target.value)} value={resultC}/>
+                        </div>
+                        <div className="mb-3 mt-3">
+                            <label >Gali</label>
+                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultD" onChange={(e) => setResultC(e.target.value)} value={resultD}/>
+                        </div>
+                        <div className="mb-3 mt-3">
+                            <label >Nva Savera</label>
+                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultE" onChange={(e) => setResultC(e.target.value)} value={resultE}/>
                         </div>
                         <button type="submit" className="btn btn-primary">
                             {!isLoading && 'Submit'}

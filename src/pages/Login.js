@@ -7,6 +7,10 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+
+    // const URL = 'http://localhost:3003'
+    const URL = 'https://satta-backend.herokuapp.com'
+
   const loginAdmin = async(e) => {
     e.preventDefault();
     console.log('submit');
@@ -16,7 +20,8 @@ const Login = () => {
         password : password
     };
     setIsLoading(true);
-    await axios.post('https://satta-backend.herokuapp.com/api/admin/login',loginData).then((data) => {
+    // https://satta-backend.herokuapp.com
+    await axios.post(URL+'/api/admin/login',loginData).then((data) => {
         console.log(data.data);
         if (data.data.token) {
             localStorage.setItem('loginToken',data.data.token)
