@@ -18,8 +18,8 @@ const HomeCity = (props) => {
     const [isLoading,setisLoading] = useState(true);
     const [sattaList, setSattaList] = useState([])
 
-    // const URL = 'http://localhost:3003'
-    const URL = 'https://satta-backend.herokuapp.com'
+    const URL = 'http://localhost:3003'
+    // const URL = 'https://satta-backend.herokuapp.com'
   
   const getList = async () => {
     let token = localStorage.getItem('loginToken')

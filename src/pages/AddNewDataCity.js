@@ -81,6 +81,7 @@ const AddNewDataCity = (props) => {
                         <div className="mb-3 mt-3">
                             <label >Result Date:</label>
                             <DateTimePicker 
+                                name="date"
                                 className={'form-control'}
                                 onChange={(date) => { 
                                     console.log(date);

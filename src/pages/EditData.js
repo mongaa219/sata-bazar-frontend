@@ -18,8 +18,8 @@ const EditData = (props) => {
     const [resultB, setResultB] = useState(0);
     const [resultC, setResultC] = useState(0);
 
-    // const URL = 'http://localhost:3003'
-    const URL = 'https://satta-backend.herokuapp.com'
+    const URL = 'http://localhost:3003'
+    // const URL = 'https://satta-backend.herokuapp.com'
 
     // const { id } = useParams();
     // console.log(props.history);
@@ -122,6 +122,7 @@ const EditData = (props) => {
                         <div className="mb-3 mt-3">
                             <label >Result Date:</label>
                             <DateTimePicker 
+                                name="date"
                                 className={'form-control'}
                                 onChange={setResultDate} value={resultDate} minDate={new Date()}/>
                         </div>
