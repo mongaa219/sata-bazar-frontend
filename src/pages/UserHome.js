@@ -88,7 +88,8 @@ const UserHome = (props) => {
       {
           d = makeTime()
       }
-      await axios.get(URL+'/api/city/get?date='+d,{
+      let newMonth = Moment(d).format('YYYY-MM')
+      await axios.get(URL+'/api/city/get?date='+newMonth,{
           headers : headers
       }).then((data) => {
         setisLoading(false)
@@ -114,6 +115,8 @@ const UserHome = (props) => {
   },[])
   const makeTime = () =>{
     const date = new Date();
+    console.log('moment date', Moment(date).format('YYYY-MM'))
+    return Moment(date).format('YYYY-MM-DD')
     let year = date.getFullYear();
     let month = date.getMonth()
     let day = date.getDate()
@@ -144,15 +147,23 @@ const UserHome = (props) => {
                     <marquee className="marq-tag">{ siteAnnouncement }</marquee>
                 </div>
                 <div className='col-md-12 mt-1 mb-2'>
-                    <div className='form-group'>
-                    <input type="date" className="form-control"
-                        value={ nsdate }
-                     onChange={(e) => {
-                        setNsdate(e.target.value)
-                        console.log(e.target.value) 
-                        getList(e.target.value)
-                    }}/>
+                    <div className='row'>
+                        <div className='col-md-9'>
+                        </div>
+                        <div className='col-md-3'>
+                            <div className='form-group'>
+                                <label>Select Date</label>
+                            <input type="date" className="form-control"
+                                value={ nsdate }
+                            onChange={(e) => {
+                                setNsdate(e.target.value)
+                                console.log(Moment(e.target.value).format('YYYY-MM'));
+                                console.log(e.target.value) 
+                                getList(e.target.value)
+                            }}/>
 
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -163,29 +174,29 @@ const UserHome = (props) => {
                     }
                     {!isLoading && 
                         <> 
-                            <Table striped bordered hover>
+                            <Table striped bordered hover >
                                 <thead>
                                     <tr>
-                                    <th>#</th>
-                                    {/* <th>Title</th> */}
-                                    {/* <th>Description</th> */}
-                                    <th>Date Time</th>
-                                    <th>Disawer</th>
-                                    <th>Fridabad</th>
-                                    <th>Gaziyabad</th>
-                                    <th>Gali</th>
-                                    <th>Nva Savera</th>
-                                    {/* <th>Action</th> */}
+                                    {/* <th className='ns-city-table'>#</th> */}
+                                    {/* <th className='ns-city-table'>Title</th> */}
+                                    {/* <th className='ns-city-table'>Description</th> */}
+                                    <th className='ns-city-table hight'>Date</th>
+                                    <th className='ns-city-table'>Disawer</th>
+                                    <th className='ns-city-table'>Fridabad</th>
+                                    <th className='ns-city-table'>Gaziyabad</th>
+                                    <th className='ns-city-table'>Gali</th>
+                                    <th className='ns-city-table'>Nva Savera</th>
+                                    {/* <th className='ns-city-table'>Action</th> */}
                                     </tr>
                                 </thead>
                                 <tbody>
                                     { sattaListCity.map((ls,i) => {
                                         return (
                                         <tr key={i}>
-                                            <td>{ i + 1}</td>
+                                            {/* <td>{ i + 1}</td> */}
                                             {/* <td>{ ls.title }</td> */}
                                             {/* <td>{ ls.description }</td> */}
-                                            <td>{ Moment(ls.resultDate).format('YYYY-MM-DD hh:mm A') }</td>
+                                            <td className='ns-city-table hight'>{ Moment(ls.resultDate).format('DD-MM') }</td>
                                             <td>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
                                             <td>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
                                             <td>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>
@@ -217,24 +228,24 @@ const UserHome = (props) => {
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>
-                                    <th>#</th>
-                                    {/* <th>Title</th> */}
-                                    {/* <th>Description</th> */}
-                                    <th>Date Time</th>
-                                    <th>Result A</th>
-                                    <th>Result B</th>
-                                    <th>Result C</th>
-                                    {/* <th>Action</th> */}
+                                    <th className='ns-city-table hight'>#</th>
+                                    {/* <th className='ns-city-table'>Title</th> */}
+                                    {/* <th className='ns-city-table'>Description</th> */}
+                                    <th className='ns-city-table'>Date Time</th>
+                                    <th className='ns-city-table'>Result A</th>
+                                    <th className='ns-city-table'>Result B</th>
+                                    <th className='ns-city-table'>Result C</th>
+                                    {/* <th className='ns-city-table'>Action</th> */}
                                     </tr>
                                 </thead>
                                 <tbody>
                                     { sattaList.map((ls,i) => {
                                         return (
                                         <tr key={i}>
-                                            <td>{ i + 1}</td>
+                                            <td className='ns-city-table hight'>{ i + 1}</td>
                                             {/* <td>{ ls.title }</td> */}
                                             {/* <td>{ ls.description }</td> */}
-                                            <td>{ Moment(ls.resultDate).format('YYYY-MM-DD hh:mm A') }</td>
+                                            <td>{ Moment(ls.resultDate).format('hh:mm A') }</td>
                                             <td>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
                                             <td>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
                                             <td>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>

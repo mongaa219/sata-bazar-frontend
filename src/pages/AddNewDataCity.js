@@ -28,7 +28,6 @@ const AddNewDataCity = (props) => {
       e.preventDefault();
       let submit_data = {
         title : title,
-        description : description,
         resultDate : resultDate,
         resultA : resultA,
         resultB : resultB,
@@ -78,10 +77,6 @@ const AddNewDataCity = (props) => {
                         <div className="mb-3 mt-3">
                             <label >Title</label>
                             <input type="text" className="form-control"  placeholder="Enter Title" name="title" onChange={(e) => setTitle(e.target.value)}/>
-                        </div>
-                        <div className="mb-3 mt-3">
-                            <label >Description</label>
-                            <textarea className="form-control"  placeholder="Enter Title" name="Description" onChange={(e) => setDescription(e.target.value)}></textarea>
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result Date:</label>
