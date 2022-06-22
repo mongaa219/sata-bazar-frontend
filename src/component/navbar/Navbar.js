@@ -11,42 +11,42 @@ NavBtnLink,
 const Navbar = () => {
 return (
 	<>
-	<Nav>
+	<Nav className="ns-nav-parent">
 		{/* <Bars /> */}
 
-		<NavMenu>
-		<NavLink to='/' >
-			User Home
-		</NavLink>
-		<NavLink to='/home' >
-			Home
-		</NavLink>
-		<NavLink to='/home-city' >
-			City Data
-		</NavLink>
-		<NavLink to='/announcement' >
-			Announcement
-		</NavLink>
-		<NavLink to='/logout' >
-			Logout
-		</NavLink>
-		{/* <NavLink to='/events' >
-			Events
-		</NavLink>
-		<NavLink to='/annual' >
-			Annual Report
-		</NavLink>
-		<NavLink to='/team' >
-			Teams
-		</NavLink>
-		<NavLink to='/blogs' >
-			Blogs
-		</NavLink>
-		<NavLink to='/sign-up' >
-			Sign Up
-		</NavLink> */}
-		{/* Second Nav */}
-		{/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+		<NavMenu className="ns-nav-menu">
+			<NavLink to='/' className="ns-nav-link">
+				User Home
+			</NavLink>
+			<NavLink to='/home' className="ns-nav-link">
+				Home
+			</NavLink>
+			<NavLink to='/home-city' className="ns-nav-link">
+				City Data
+			</NavLink>
+			<NavLink to='/announcement' className="ns-nav-link">
+				Announcement
+			</NavLink>
+			<NavLink to='/logout' className="ns-nav-link">
+				Logout
+			</NavLink>
+			{/* <NavLink to='/events' >
+				Events
+			</NavLink>
+			<NavLink to='/annual' >
+				Annual Report
+			</NavLink>
+			<NavLink to='/team' >
+				Teams
+			</NavLink>
+			<NavLink to='/blogs' >
+				Blogs
+			</NavLink>
+			<NavLink to='/sign-up' >
+				Sign Up
+			</NavLink> */}
+			{/* Second Nav */}
+			{/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
 		</NavMenu>
 		{/* <NavBtn>
 		<NavBtnLink to='/signin'>Sign In</NavBtnLink>

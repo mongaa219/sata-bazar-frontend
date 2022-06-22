@@ -35,6 +35,7 @@
     <style>
       * {
           font-weight: 500;
+          overflow: scroll;
           /* background-color: rgba(214, 213, 213, 0.556); */
       }
       .marq-tag {
@@ -52,7 +53,19 @@
         /* padding: 5px !important; */
         height: 10px !important;
         margin: 0px !important;
-        max-width: 20px;
+        /* max-width: 20px; */
+    }
+
+    @media screen and (max-width: 768px){
+      .ns-nav-menu {
+          display: block !important;
+          align-items: flex-end;
+      }
+      .ns-nav-menu a.ns-nav-link {
+        float: left;
+        font-size: 14px;
+        padding-right: 5px
+      }
     }
     </style>
   </head>
@@ -70,5 +83,6 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
   </body>
 </html>
