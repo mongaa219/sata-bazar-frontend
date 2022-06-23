@@ -99,7 +99,7 @@ const Announcement = (props) => {
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Admin no.</label>
-                            <input type="text" className="form-control"  placeholder="Enter Title" name="adminno" onChange={(e) => setAdminno(e.target.value)} value={title}/>
+                            <input type="text" className="form-control"  placeholder="Enter Title" name="adminno" onChange={(e) => setAdminno(e.target.value)} value={adminno}/>
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Announcement</label>
