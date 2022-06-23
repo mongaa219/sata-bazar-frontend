@@ -2,9 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/nss.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="noindex" />
+    <meta name="googlebot" content="noindex" />
+    <meta name="google-site-verification" content="DkYXaNv-mUnHv7XZjEeImLF-zCrdEZY7KUW3ANxuCDg" />
     <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 
@@ -36,7 +39,11 @@
       * {
           font-weight: 500;
           overflow: scroll;
+          /* background-color: #efeeee; */
           /* background-color: rgba(214, 213, 213, 0.556); */
+      }
+      body{
+        background: #efefef !important;
       }
       .marq-tag {
         font-size: 22px;
@@ -54,6 +61,18 @@
         height: 10px !important;
         margin: 0px !important;
         /* max-width: 20px; */
+    }
+    .col-md-12.loader-ns .ns-lader-class{
+        position: fixed;
+        right: 50%;
+        top: 50%;
+        z-index: 99999;
+    }
+    .ns-head-box {
+        border: 2px solid #000;
+        padding-top: 13px;
+        background-color: #f4f14e;
+        color: #ed3c33;
     }
 
     @media screen and (max-width: 768px){

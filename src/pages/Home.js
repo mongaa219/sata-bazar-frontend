@@ -65,8 +65,8 @@ const Home = (props) => {
                         <div className='col-md-1'></div>
                     </div>
                 </div>
-                <div className='col-md-12'>
-                    {isLoading && <Spinner animation="border" role="status">
+                <div className={(!isLoading) ? 'col-md-12 ':'col-md-12 loader-ns'}>
+                    {isLoading && <Spinner animation="border" role="status" className='ns-lader-class'>
                             <span className="visually-hidden loader-ns">Loading...</span>
                             </Spinner>
                     }

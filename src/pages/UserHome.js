@@ -21,6 +21,7 @@ const UserHome = (props) => {
 
     const [siteTitle,setSiteTitle] = useState('Nva Savera');
     const [siteAnnouncement,setSiteAnnouncement] = useState('');
+    const [adminno,setadminno] = useState('');
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
@@ -37,11 +38,12 @@ const UserHome = (props) => {
             await axios.get(URL+'/api/announcment',{
                 headers : headers
             }).then((data) => { 
-            setisLoading(false)
+            // setisLoading(false)
                 console.log(data);
                 let rs = data.data;
                 setSiteTitle(rs.title || 'Nva Savera')
                 setSiteAnnouncement(rs.description || '')
+                setadminno(rs.adminno || '')
             }).catch((er) => {
                 if (er.response.status == 401) {
                     console.log('getting eror ');
@@ -130,6 +132,32 @@ const UserHome = (props) => {
       <>
         <div className='container'>
             <div className='row'>
+            <div className='col-md-12'>
+                    <div className='row mt-4 mb-4'>
+                        <div className='col-md-10'>
+                            <center>
+                                <h2>Nva Savera</h2>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <div className='col-md-12'>
+                    <div className='row mt-4 mb-4'>
+                        <div className='ns-head-box'>
+                            <center>
+                                <p>
+                                    <h4>
+                                        To play a game please contact to admin
+                                    </h4>
+                                </p>
+                                <p>
+                                    <span>Admin : {adminno}</span>
+                                </p>
+
+                            </center>
+                        </div>
+                    </div>
+                </div>
                 <div className='col-md-12'>
                     <div className='row mt-4 mb-4'>
                         <div className='col-md-10'>
@@ -167,8 +195,8 @@ const UserHome = (props) => {
                     </div>
                 </div>
 
-                <div className='col-md-12'>
-                    {isLoading && <Spinner animation="border" role="status">
+                <div className={(!isLoading) ? 'col-md-12 ':'col-md-12 loader-ns'}>
+                    {isLoading && <Spinner animation="border" role="status" className='ns-lader-class'>
                             <span className="visually-hidden loader-ns">Loading...</span>
                             </Spinner>
                     }
@@ -218,8 +246,8 @@ const UserHome = (props) => {
                 </div>
                 <div className='col-md-12 mt-3 mb-3'>
                 </div>
-                <div className='col-md-12'>
-                    {isLoading && <Spinner animation="border" role="status">
+                <div className={(!isLoading) ? 'col-md-12 ':'col-md-12 loader-ns'}>
+                    {isLoading && <Spinner animation="border" role="status" className='ns-lader-class'>
                             <span className="visually-hidden loader-ns">Loading...</span>
                             </Spinner>
                     }

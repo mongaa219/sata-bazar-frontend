@@ -12,6 +12,7 @@ const Announcement = (props) => {
     const [sattaList, setSattaList] = useState([])
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+    const [adminno, setAdminno] = useState('');
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
@@ -23,6 +24,8 @@ const Announcement = (props) => {
       let submit_data = {
         title : title,
         description : description,
+        adminno : adminno,
+        importanttext:'--'
       };
       let token = localStorage.getItem('loginToken')
     const headers = {
@@ -95,8 +98,12 @@ const Announcement = (props) => {
                             <input type="text" className="form-control"  placeholder="Enter Title" name="title" onChange={(e) => setTitle(e.target.value)} value={title}/>
                         </div>
                         <div className="mb-3 mt-3">
+                            <label >Admin no.</label>
+                            <input type="text" className="form-control"  placeholder="Enter Title" name="adminno" onChange={(e) => setAdminno(e.target.value)} value={title}/>
+                        </div>
+                        <div className="mb-3 mt-3">
                             <label >Announcement</label>
-                            <textarea className="form-control"  placeholder="Enter Description" name="Description" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
+                            <textarea className="form-control" rows={10}  placeholder="Enter Description" name="Description" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
                         </div>
                         <button type="submit" className="btn btn-primary">
                             {!isLoading && 'Save'}
