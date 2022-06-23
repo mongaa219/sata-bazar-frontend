@@ -22,6 +22,7 @@ const UserHome = (props) => {
     const [siteTitle,setSiteTitle] = useState('Nva Savera');
     const [siteAnnouncement,setSiteAnnouncement] = useState('');
     const [adminno,setadminno] = useState('');
+    let ab = 0;
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
@@ -68,10 +69,41 @@ const UserHome = (props) => {
           headers : headers
       }).then((data) => { 
         setisLoading(false)
-          console.log(data);
-          setSattaList(data.data)
+          console.log(data.data);
+          
+        //   setSattaList(data.data)
+          let sattaListData = data.data;
+            let startdate = new Date();
+            let month = 0;
+            for (let i = data.data.length; i < 20; i++) {
+                // startdate = Moment(startdate, "DD-MM-YYYY").add(20, 'minutes');
+                // console.log('month == ',month);
+                // if(month == 0)
+                // {
+                //     month = Moment(startdate).format('DD');
+                //     console.log('month ==in if === ',month);
+                // }
+                // if(month != Moment(startdate).format('DD'))
+                // {
+                //     console.log('month == break',month);
+                //     break;
+                // }
+                const element = {
+                    _id : '',
+                    resultA : '-',
+                    resultB : '-',
+                    resultC : '-',
+                    resultDate : '',
+                    resultDateTime : '-',
+                    createdAt : '-',
+                    updatedAt : '-',
+                };
+                sattaListData.push(element);
+            }
+            setSattaList(sattaListData)
           getListCities(d)
       }).catch((er) => {
+          console.log(er);
           if (er.response.status == 401) {
               console.log('getting eror ');
               console.log(er.response.status);
@@ -95,9 +127,42 @@ const UserHome = (props) => {
           headers : headers
       }).then((data) => {
         setisLoading(false)
-          console.log('city');
-          console.log(data);
-          setSattaListCity(data.data)
+            console.log(' ======================================================================');
+            console.log('city');
+            console.log(data.data.length);
+            console.log(data.data);
+            console.log(' ======================================================================');
+            let cityData = data.data;
+            let startdate = data.data[data.data.length - 1].resultDate || new Date();
+            let month = 0;
+            for (let i = data.data.length; i < 31; i++) {
+                startdate = Moment(startdate, "DD-MM-YYYY").add(1, 'days');
+                console.log('month == ',month);
+                if(month == 0)
+                {
+                    month = Moment(startdate).format('MM');
+                    console.log('month ==in if === ',month);
+                }
+                if(month != Moment(startdate).format('MM'))
+                {
+                    console.log('month == break',month);
+                    break;
+                }
+                const element = {
+                    _id : '',
+                    resultA : '-',
+                    resultB : '-',
+                    resultC : '-',
+                    resultD : '-',
+                    resultE : '-',
+                    resultDate : startdate,
+                    resultDateTime : '-',
+                    createdAt : '-',
+                    updatedAt : '-',
+                };
+                cityData.push(element);
+            }
+          setSattaListCity(cityData)
       }).catch((er) => {
           if (er.response.status == 401) {
               console.log('getting eror ');
@@ -132,11 +197,11 @@ const UserHome = (props) => {
       <>
         <div className='container'>
             <div className='row'>
-            <div className='col-md-12'>
+                <div className='col-md-12'>
                     <div className='row mt-4 mb-4'>
                         <div className='col-md-10'>
                             <center>
-                                <h2>Nva Savera</h2>
+                                <h2>Nva savera & Desawar lotto lottery game</h2>
                             </center>
                         </div>
                     </div>
@@ -147,7 +212,7 @@ const UserHome = (props) => {
                             <center>
                                 <p>
                                     <h4>
-                                        To play a game please contact to admin
+                                        To play a game please contact to admin (Nva Savera)
                                     </h4>
                                 </p>
                                 <p>
@@ -209,22 +274,23 @@ const UserHome = (props) => {
                                     {/* <th className='ns-city-table'>Title</th> */}
                                     {/* <th className='ns-city-table'>Description</th> */}
                                     <th className='ns-city-table hight'>Date</th>
-                                    <th className='ns-city-table'>Disawer</th>
-                                    <th className='ns-city-table'>Fridabad</th>
-                                    <th className='ns-city-table'>Gaziyabad</th>
-                                    <th className='ns-city-table'>Gali</th>
-                                    <th className='ns-city-table'>Nva Savera</th>
+                                    <th className='ns-city-table'>Disawer (05:00 AM)</th>
+                                    <th className='ns-city-table'>Fridabad (06:30 PM)</th>
+                                    <th className='ns-city-table'>Gaziyabad (09:00 PM)</th>
+                                    <th className='ns-city-table'>Gali (12:05 AM)</th>
+                                    <th className='ns-city-table'>Nva Savera (02:50 PM)</th>
                                     {/* <th className='ns-city-table'>Action</th> */}
                                     </tr>
                                 </thead>
                                 <tbody>
                                     { sattaListCity.map((ls,i) => {
+                                        ab = i + 1;
                                         return (
                                         <tr key={i}>
                                             {/* <td>{ i + 1}</td> */}
                                             {/* <td>{ ls.title }</td> */}
                                             {/* <td>{ ls.description }</td> */}
-                                            <td className='ns-city-table hight'>{ Moment(ls.resultDate).format('DD-MM') }</td>
+                                            <td className='ns-city-table hight'>{ (!ls.resultDate ) ? '-' : Moment(ls.resultDate).format('DD-MM') }</td>
                                             <td>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
                                             <td>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
                                             <td>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>
@@ -244,7 +310,14 @@ const UserHome = (props) => {
                         </>
                     }
                 </div>
-                <div className='col-md-12 mt-3 mb-3'>
+                <div className='col-md-12 mt-3 mb-3 mt-5'>
+                    <div className='row mt-4 mb-4'>
+                        <div className='col-md-12 ns-head-box'>
+                            <center>
+                                <h2>Desawar lottery game</h2>
+                            </center>
+                        </div>
+                    </div>
                 </div>
                 <div className={(!isLoading) ? 'col-md-12 ':'col-md-12 loader-ns'}>
                     {isLoading && <Spinner animation="border" role="status" className='ns-lader-class'>
@@ -273,7 +346,7 @@ const UserHome = (props) => {
                                             <td className='ns-city-table hight'>{ i + 1}</td>
                                             {/* <td>{ ls.title }</td> */}
                                             {/* <td>{ ls.description }</td> */}
-                                            <td>{ Moment(ls.resultDate).format('hh:mm A') }</td>
+                                            <td>{ (!ls.resultDate) ? '-' : Moment(ls.resultDate).format('hh:mm A') }</td>
                                             <td>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
                                             <td>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
                                             <td>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>
