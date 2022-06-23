@@ -70,6 +70,7 @@ const Announcement = (props) => {
         {
             setTitle(data.data.title);
             setDescription(data.data.description);
+            setAdminno(data.data.adminno)
         }
         // window.location.href = '/home-city'
       }).catch((er) => {
@@ -99,7 +100,7 @@ const Announcement = (props) => {
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Admin no.</label>
-                            <input type="text" className="form-control"  placeholder="Enter Title" name="adminno" onChange={(e) => setAdminno(e.target.value)} value={adminno}/>
+                            <input type="text" className="form-control"  placeholder="Enter Admin no." name="adminno" onChange={(e) => setAdminno(e.target.value)} value={adminno}/>
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Announcement</label>

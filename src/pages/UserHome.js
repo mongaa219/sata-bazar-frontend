@@ -72,33 +72,35 @@ const UserHome = (props) => {
           console.log(data.data);
           
         //   setSattaList(data.data)
-          let sattaListData = data.data;
-            let startdate = new Date();
+          let sattaListData = [];
+            // let startdate = new Date();
             let month = 0;
-            for (let i = data.data.length; i < 20; i++) {
-                // startdate = Moment(startdate, "DD-MM-YYYY").add(20, 'minutes');
-                // console.log('month == ',month);
-                // if(month == 0)
-                // {
-                //     month = Moment(startdate).format('DD');
-                //     console.log('month ==in if === ',month);
-                // }
-                // if(month != Moment(startdate).format('DD'))
-                // {
-                //     console.log('month == break',month);
-                //     break;
-                // }
-                const element = {
-                    _id : '',
-                    resultA : '-',
-                    resultB : '-',
-                    resultC : '-',
-                    resultDate : '',
-                    resultDateTime : '-',
-                    createdAt : '-',
-                    updatedAt : '-',
-                };
-                sattaListData.push(element);
+            // "2022-06-18T18:52:34.064Z"
+            
+            let startdate = Moment(d+'T10:00:00.000Z','YYYY-MM-DD hh:mm A'); 
+            console.log('startdate ===== >',startdate);
+            for (let i = data.data.length; i < 28; i++) {
+                const findDate = filterData(data.data,startdate,'YYYY-MM-DD hh:mm A');
+                if(findDate)
+                {
+                    console.log(i,findDate);
+                    sattaListData.push(findDate);
+                }
+                else
+                {
+                    const element = {
+                        _id : '',
+                        resultA : '-',
+                        resultB : '-',
+                        resultC : '-',
+                        resultDate : startdate,
+                        resultDateTime : '-',
+                        createdAt : '-',
+                        updatedAt : '-',
+                    };
+                    sattaListData.push(element);
+                }
+                startdate = Moment(startdate, "YYYY-MM-DD hh:mm A").add(20, 'minutes');
             }
             setSattaList(sattaListData)
           getListCities(d)
@@ -109,6 +111,16 @@ const UserHome = (props) => {
               console.log(er.response.status);
           }
       })
+  }
+  const filterData = (arr,search,format = 'YYYY-MM-DD') => {
+      for (let i = 0; i < arr.length; i++) {
+        //   console.log(Moment(arr[i].resultDate).format('YYYY-MM-DD') +" == "+ Moment(search).format('YYYY-MM-DD'));
+          if(Moment(arr[i].resultDate).format(format) == Moment(search).format(format))
+          {
+              return arr[i];
+          }
+      }
+      return false;
   }
   const getListCities = async (d) => {
     let token = localStorage.getItem('loginToken')
@@ -127,46 +139,70 @@ const UserHome = (props) => {
           headers : headers
       }).then((data) => {
         setisLoading(false)
-            console.log(' ======================================================================');
-            console.log('city');
-            console.log(data.data.length);
-            console.log(data.data);
-            console.log(' ======================================================================');
-            let cityData = data.data;
-            let startdate = data.data[data.data.length - 1].resultDate || new Date();
+            // console.log(' ======================================================================');
+            // console.log('city');
+            // console.log(data.data.length);
+            // console.log(data.data);
+            // console.log(' ======================================================================');
+            // let cityData = data.data;
+            let cityData = [];
+            // let startdate = data.data[data.data.length - 1].resultDate || new Date();
             let month = 0;
+            // let startdate = newMonth+'-01T'
+            let startdate = Moment(newMonth+'-01T','YYYY-MM-DD'); 
             for (let i = data.data.length; i < 31; i++) {
+                // let element;
+                console.log('date starting ==> '+Moment(startdate).format('YYYY-MM-DD'));
                 startdate = Moment(startdate, "DD-MM-YYYY").add(1, 'days');
                 console.log('month == ',month);
                 if(month == 0)
                 {
                     month = Moment(startdate).format('MM');
-                    console.log('month ==in if === ',month);
+                    // console.log('month ==in if === ',month);
                 }
                 if(month != Moment(startdate).format('MM'))
                 {
-                    console.log('month == break',month);
+                    // console.log('month == break',month);
                     break;
                 }
-                const element = {
-                    _id : '',
-                    resultA : '-',
-                    resultB : '-',
-                    resultC : '-',
-                    resultD : '-',
-                    resultE : '-',
-                    resultDate : startdate,
-                    resultDateTime : '-',
-                    createdAt : '-',
-                    updatedAt : '-',
-                };
-                cityData.push(element);
+                console.log('date entered ==> '+Moment(startdate).format('YYYY-MM-DD'));
+                console.log('find data ==> '+Moment(startdate).format('YYYY-MM-DD'),filterData(data.data,startdate))
+                // console.log('find data ==> ',filterData(data.data,startdate))
+                const findDate = filterData(data.data,startdate);
+                if(findDate)
+                {
+                    console.log(i,findDate);
+                    cityData.push(findDate);
+                }
+                else
+                {
+                    const element = {
+                         _id : '',
+                         resultA : '-',
+                         resultB : '-',
+                         resultC : '-',
+                         resultD : '-',
+                         resultE : '-',
+                         resultDate : startdate,
+                         resultDateTime : '-',
+                         createdAt : '-',
+                         updatedAt : '-',
+                     };
+ 
+                     cityData.push(element);
+                }
+                // }
+                // startdate = Moment(startdate, "DD-MM-YYYY").add(1, 'days');
             }
           setSattaListCity(cityData)
       }).catch((er) => {
-          if (er.response.status == 401) {
-              console.log('getting eror ');
-              console.log(er.response.status);
+          console.log('city data === >  ',er);
+          if(er.response)
+          {
+              if (er.response.status == 401) {
+                  console.log('getting eror ');
+                  console.log(er.response.status);
+              }
           }
       })
   }
