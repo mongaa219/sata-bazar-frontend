@@ -286,6 +286,11 @@ const UserHome = (props) => {
                     <marquee className="marq-tag">{ siteAnnouncement }</marquee>
                 </div> */}
                 <div className='col-md-12 mt-1 mb-2'>
+                    <div className='table-heading-city-ns'>
+                        <h2>All Game Result Chart</h2>
+                    </div>
+                </div>
+                <div className='col-md-12 mt-1 mb-2'>
                     <div className='row'>
                         <div className='col-md-9'>
                         </div>
