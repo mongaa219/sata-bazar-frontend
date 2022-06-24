@@ -375,13 +375,13 @@ const UserHome = (props) => {
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>
-                                    <th className='ns-city-table hight'>#</th>
+                                    <th className='ns-city-table hight ns-result'>#</th>
                                     {/* <th className='ns-city-table'>Title</th> */}
                                     {/* <th className='ns-city-table'>Description</th> */}
-                                    <th className='ns-city-table'>Date Time</th>
-                                    <th className='ns-city-table'>Result A</th>
-                                    <th className='ns-city-table'>Result B</th>
-                                    <th className='ns-city-table'>Result C</th>
+                                    <th className='ns-city-table columns-ns'>Date Time</th>
+                                    <th className='ns-city-table columns-ns'>Result A</th>
+                                    <th className='ns-city-table columns-ns'>Result B</th>
+                                    <th className='ns-city-table columns-ns'>Result C</th>
                                     {/* <th className='ns-city-table'>Action</th> */}
                                     </tr>
                                 </thead>
@@ -389,13 +389,13 @@ const UserHome = (props) => {
                                     { sattaList.map((ls,i) => {
                                         return (
                                         <tr key={i}>
-                                            <td className='ns-city-table hight'>{ i + 1}</td>
+                                            <td className='ns-city-table hight ns-result'>{ i + 1}</td>
                                             {/* <td>{ ls.title }</td> */}
                                             {/* <td>{ ls.description }</td> */}
-                                            <td>{ (!ls.resultDate) ? '-' : Moment(ls.resultDate).format('hh:mm A') }</td>
-                                            <td>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
-                                            <td>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
-                                            <td>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>
+                                            <td className='columns-ns-resultls'>{ (!ls.resultDate) ? '-' : Moment(ls.resultDate).format('hh:mm A') }</td>
+                                            <td className='columns-ns-resultls'>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
+                                            <td className='columns-ns-resultls'>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
+                                            <td className='columns-ns-resultls'>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>
                                             {/* <td>
                                                 <Link to={'/edit/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />
