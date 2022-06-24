@@ -24,8 +24,8 @@ const UserHome = (props) => {
     const [adminno,setadminno] = useState('');
     let ab = 0;
 
-    // const URL = 'http://localhost:3003'
-    const URL = 'https://satta-backend.herokuapp.com'
+    const URL = 'http://localhost:3003'
+    // const URL = 'https://satta-backend.herokuapp.com'
     
     const [nsdate,setNsdate] = useState('');
 
@@ -150,11 +150,10 @@ const UserHome = (props) => {
             let month = 0;
             // let startdate = newMonth+'-01T'
             let startdate = Moment(newMonth+'-01T','YYYY-MM-DD'); 
-            for (let i = data.data.length; i < 31; i++) {
+            for (let i = 0; i <= 31; i++) {
                 // let element;
-                console.log('date starting ==> '+Moment(startdate).format('YYYY-MM-DD'));
-                startdate = Moment(startdate, "DD-MM-YYYY").add(1, 'days');
-                console.log('month == ',month);
+                // console.log('date starting ==> '+Moment(startdate).format('YYYY-MM-DD'));
+                // console.log('month == ',month);
                 if(month == 0)
                 {
                     month = Moment(startdate).format('MM');
@@ -165,13 +164,13 @@ const UserHome = (props) => {
                     // console.log('month == break',month);
                     break;
                 }
-                console.log('date entered ==> '+Moment(startdate).format('YYYY-MM-DD'));
-                console.log('find data ==> '+Moment(startdate).format('YYYY-MM-DD'),filterData(data.data,startdate))
+                // console.log('date entered ==> '+Moment(startdate).format('YYYY-MM-DD'));
+                // console.log('find data ==> '+Moment(startdate).format('YYYY-MM-DD'),filterData(data.data,startdate))
                 // console.log('find data ==> ',filterData(data.data,startdate))
                 const findDate = filterData(data.data,startdate);
                 if(findDate)
                 {
-                    console.log(i,findDate);
+                    // console.log(i,findDate);
                     cityData.push(findDate);
                 }
                 else
@@ -191,6 +190,7 @@ const UserHome = (props) => {
  
                      cityData.push(element);
                 }
+                startdate = Moment(startdate, "DD-MM-YYYY").add(1, 'days');
                 // }
                 // startdate = Moment(startdate, "DD-MM-YYYY").add(1, 'days');
             }
@@ -235,7 +235,14 @@ const UserHome = (props) => {
             <div className='row'>
                 <div className='col-md-12'>
                     <div className='row mt-4 mb-4'>
-                        <div className='col-md-10'>
+                        <div className='col-md-10 center-ns'>
+                                <h2>www.nvasaverasatta.com</h2>
+                        </div>
+                    </div>
+                </div>
+                <div className='col-md-12'>
+                    <div className='row mt-4 mb-4'>
+                        <div className='col-md-10 bg-black ns-heading-top'>
                             <center>
                                 <h2>Nva savera & Desawar lotto lottery game</h2>
                             </center>
@@ -261,10 +268,13 @@ const UserHome = (props) => {
                 </div>
                 <div className='col-md-12'>
                     <div className='row mt-4 mb-4'>
-                        <div className='col-md-10'>
-                            <center>
-                                <h2>{ siteTitle }</h2>
-                            </center>
+                        <div className='center bg-black'>
+                                <h2 className='white-color'>{ siteTitle }</h2>
+                                <h3 className='yellow-color'>{ siteAnnouncement }</h3>
+                                {/* <h2 className='white-color'>{ siteTitle }</h2>
+                                <h3 className='yellow-color'>{ siteAnnouncement }</h3>
+                                <h2 className='white-color'>{ siteTitle }</h2>
+                                <h3 className='yellow-color'>{ siteAnnouncement }</h3> */}
                         </div>
                         <div className='col-md-1'>
                             
@@ -272,9 +282,9 @@ const UserHome = (props) => {
                         <div className='col-md-1'></div>
                     </div>
                 </div>
-                <div className='col-md-12'>
+                {/* <div className='col-md-12'>
                     <marquee className="marq-tag">{ siteAnnouncement }</marquee>
-                </div>
+                </div> */}
                 <div className='col-md-12 mt-1 mb-2'>
                     <div className='row'>
                         <div className='col-md-9'>
@@ -309,12 +319,12 @@ const UserHome = (props) => {
                                     {/* <th className='ns-city-table'>#</th> */}
                                     {/* <th className='ns-city-table'>Title</th> */}
                                     {/* <th className='ns-city-table'>Description</th> */}
-                                    <th className='ns-city-table hight'>Date</th>
-                                    <th className='ns-city-table'>Disawer (05:00 AM)</th>
-                                    <th className='ns-city-table'>Fridabad (06:30 PM)</th>
-                                    <th className='ns-city-table'>Gaziyabad (09:00 PM)</th>
-                                    <th className='ns-city-table'>Gali (12:05 AM)</th>
-                                    <th className='ns-city-table'>Nva Savera (02:50 PM)</th>
+                                    <th className='ns-city-table high columns-nst'>Date</th>
+                                    <th className='ns-city-table columns-ns'>Disawer (05:00 AM)</th>
+                                    <th className='ns-city-table columns-ns'>Fridabad (06:30 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Gaziyabad (09:00 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Gali (12:05 AM)</th>
+                                    <th className='ns-city-table columns-ns'>Nva Savera (02:50 PM)</th>
                                     {/* <th className='ns-city-table'>Action</th> */}
                                     </tr>
                                 </thead>
@@ -327,11 +337,11 @@ const UserHome = (props) => {
                                             {/* <td>{ ls.title }</td> */}
                                             {/* <td>{ ls.description }</td> */}
                                             <td className='ns-city-table hight'>{ (!ls.resultDate ) ? '-' : Moment(ls.resultDate).format('DD-MM') }</td>
-                                            <td>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
-                                            <td>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
-                                            <td>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>
-                                            <td>{ (!ls.resultD || ls.resultD == 0) ? '-' : ls.resultD }</td>
-                                            <td>{ (!ls.resultE || ls.resultE == 0) ? '-' : ls.resultE }</td>
+                                            <td className='columns-ns'>{ (!ls.resultA || ls.resultA == 0) ? '-' : ls.resultA }</td>
+                                            <td className='columns-ns'>{ (!ls.resultB || ls.resultB == 0) ? '-' : ls.resultB }</td>
+                                            <td className='columns-ns'>{ (!ls.resultC || ls.resultC == 0) ? '-' : ls.resultC }</td>
+                                            <td className='columns-ns'>{ (!ls.resultD || ls.resultD == 0) ? '-' : ls.resultD }</td>
+                                            <td className='columns-ns'>{ (!ls.resultE || ls.resultE == 0) ? '-' : ls.resultE }</td>
                                             {/* <td>
                                                 <Link to={'/edit/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />
