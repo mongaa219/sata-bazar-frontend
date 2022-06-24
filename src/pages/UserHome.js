@@ -234,14 +234,24 @@ const UserHome = (props) => {
         <div className='container'>
             <div className='row'>
                 <div className='col-md-12'>
-                    <div className='row mt-4 mb-4'>
+                    <div className='row'>
+                        <div className='col-md-4 ns-top-rd'>Satta King</div>
+                        <div className='col-md-4 ns-top-rd'>Satta Leak</div>
+                        <div className='col-md-4 ns-top-rd'>Result Chart</div>
+                        <div className='col-md-12 bg-black red-color ns-marquee'>
+                            <marquee>Nva Savera Satta, Nvasaverasatta, Nva Savera Satta 2020, Nva Savera Satta up, Nva Savera Satta result, Nva Savera Satta result, Nva Savera Satta online, Gali result, Desawar result, Nva Savera Satta chart, Nva Savera Satta live, Gali satta, Deshawar live result, Gali live result, Satta matka, Nva Savera Satta matka, Nva Savera Satta up, Nva Savera Satta 2021 chart, Nva Savera Satta desawar, Nva Savera Satta gali, Gali live result, Disawar live result, Satta Number, Satta Game, Gali Number, Delhi Nva Savera Satta, Satta Bazar, Black Nva Savera Satta, Gali Single Jodi, Black Satta Result, Desawar Single Jodi</marquee>
+                        </div>
+                    </div>
+                </div>
+                <div className='col-md-12'>
+                    <div className='row mt-3 mb-3'>
                         <div className='col-md-10 center-ns'>
                                 <h2>www.nvasaverasatta.com</h2>
                         </div>
                     </div>
                 </div>
                 <div className='col-md-12'>
-                    <div className='row mt-4 mb-4'>
+                    <div className='row mt-2 mb-2'>
                         <div className='col-md-10 bg-black ns-heading-top'>
                             <center>
                                 <h2>Nva savera & Desawar lotto lottery game</h2>
@@ -414,6 +424,17 @@ const UserHome = (props) => {
                             </Table>
                         </>
                     }
+                </div>
+
+                <div className='col-md-12 mt-4 mb-5'>
+                    <div className='row'>
+                        <div className='col-md-12 ns-info-bottom'>
+                        <h2>
+                            What is Nva Savera Satta ?
+                        </h2>
+                        <p>Nva Savera Satta is a kind of lottery game based on numbers from 00 to 99 which comes under "Gambling". The real name of this game is Nva Savera Satta, in which "Satta" means betting or gambling and "Nva Savera" means a pot through which a number is drawn out. In the Nva Savera Satta game, people wager money on their chosen numbers from between 00 to 99. After which, a number is drawn out of the pot. Whichever person's number was drawn out, he would win the prize and people called him as the Nva Savera Satta. Nva Savera Satta is not the name of the game, it was the title used to honor the winner of the Satta Matka. But as this game became popular, people started knowing it by the name of Nva Savera Satta.</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
