@@ -79,7 +79,7 @@ const UserHome = (props) => {
             
             let startdate = Moment(d+'T10:00:00.000Z','YYYY-MM-DD hh:mm A'); 
             console.log('startdate ===== >',startdate);
-            for (let i = data.data.length; i < 28; i++) {
+            for (let i = data.data.length; i <= 28; i++) {
                 const findDate = filterData(data.data,startdate,'YYYY-MM-DD hh:mm A');
                 if(findDate)
                 {
