@@ -85,7 +85,7 @@ const AddNewDataCity = (props) => {
                                 className={'form-control'}
                                 onChange={(date) => { 
                                     console.log(date);
-                                    setResultDate(date) }} value={resultDate} minDate={new Date()}/>
+                                    setResultDate(date) }} value={resultDate} />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Disawer</label>
