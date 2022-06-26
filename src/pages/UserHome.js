@@ -90,13 +90,13 @@ const UserHome = (props) => {
                 {
                     const element = {
                         _id : '',
-                        resultA : '-',
-                        resultB : '-',
-                        resultC : '-',
+                        resultA : '',
+                        resultB : '',
+                        resultC : '',
                         resultDate : startdate,
-                        resultDateTime : '-',
-                        createdAt : '-',
-                        updatedAt : '-',
+                        resultDateTime : '',
+                        createdAt : '',
+                        updatedAt : '',
                     };
                     sattaListData.push(element);
                 }
@@ -177,15 +177,15 @@ const UserHome = (props) => {
                 {
                     const element = {
                          _id : '',
-                         resultA : '-',
-                         resultB : '-',
-                         resultC : '-',
-                         resultD : '-',
-                         resultE : '-',
+                         resultA : '',
+                         resultB : '',
+                         resultC : '',
+                         resultD : '',
+                         resultE : '',
                          resultDate : startdate,
-                         resultDateTime : '-',
-                         createdAt : '-',
-                         updatedAt : '-',
+                         resultDateTime : '',
+                         createdAt : '',
+                         updatedAt : '',
                      };
  
                      cityData.push(element);
