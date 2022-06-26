@@ -352,11 +352,11 @@ const UserHome = (props) => {
                                             {/* <td>{ ls.title }</td> */}
                                             {/* <td>{ ls.description }</td> */}
                                             <td className='ns-city-table hight'>{ (!ls.resultDate ) ? '-' : Moment(ls.resultDate).format('DD-MM') }</td>
-                                            <td className='columns-ns'>{ (!ls.resultA) ? '-' : ls.resultA }</td>
-                                            <td className='columns-ns'>{ (!ls.resultB) ? '-' : ls.resultB }</td>
-                                            <td className='columns-ns'>{ (!ls.resultC) ? '-' : ls.resultC }</td>
-                                            <td className='columns-ns'>{ (!ls.resultD) ? '-' : ls.resultD }</td>
-                                            <td className='columns-ns'>{ (!ls.resultE) ? '-' : ls.resultE }</td>
+                                            <td className='columns-ns'>{ ls.resultA }</td>
+                                            <td className='columns-ns'>{ ls.resultB }</td>
+                                            <td className='columns-ns'>{ ls.resultC }</td>
+                                            <td className='columns-ns'>{ ls.resultD }</td>
+                                            <td className='columns-ns'>{ ls.resultE }</td>
                                             {/* <td>
                                                 <Link to={'/edit/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />
@@ -408,9 +408,9 @@ const UserHome = (props) => {
                                             {/* <td>{ ls.title }</td> */}
                                             {/* <td>{ ls.description }</td> */}
                                             <td className='columns-ns-resultls'>{ (!ls.resultDate) ? '-' : Moment(ls.resultDate).format('hh:mm A') }</td>
-                                            <td className='columns-ns-resultls'>{ (!ls.resultA) ? '-' : ls.resultA }</td>
-                                            <td className='columns-ns-resultls'>{ (!ls.resultB) ? '-' : ls.resultB }</td>
-                                            <td className='columns-ns-resultls'>{ (!ls.resultC) ? '-' : ls.resultC }</td>
+                                            <td className='columns-ns-resultls'>{ ls.resultA }</td>
+                                            <td className='columns-ns-resultls'>{ ls.resultB }</td>
+                                            <td className='columns-ns-resultls'>{ ls.resultC }</td>
                                             {/* <td>
                                                 <Link to={'/edit/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />
