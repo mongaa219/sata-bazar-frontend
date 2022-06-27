@@ -71,7 +71,7 @@ const EditData = (props) => {
       let submit_data = {
         title : title,
         description : description,
-        resultDate : resultDate,
+        resultDate : Moment(resultDate).utc().format(),
         resultA : resultA,
         resultB : resultB,
         resultC : resultC
@@ -136,6 +136,7 @@ const EditData = (props) => {
                                 timeIntervals={20}
                                 onChange={(date) => { 
                                     console.log(date);
+                                    console.log(Moment(date).utc().format())
                                     setResultDate(Moment(date).format('YYYY/MM/DD hh:mm A')) }} value={resultDate} />
                         </div>
                         <div className="mb-3 mt-3">

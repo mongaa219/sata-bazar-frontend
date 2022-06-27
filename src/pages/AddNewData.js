@@ -29,7 +29,7 @@ const AddNewData = (props) => {
       let submit_data = {
         title : title,
         description : description,
-        resultDate : resultDate,
+        resultDate : Moment(resultDate).utc().format(),
         resultA : resultA,
         resultB : resultB,
         resultC : resultC
