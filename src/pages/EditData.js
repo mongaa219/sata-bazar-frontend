@@ -17,9 +17,9 @@ const EditData = (props) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState(' ');
     const [resultDate, setResultDate] = useState(new Date());
-    const [resultA, setResultA] = useState(0);
-    const [resultB, setResultB] = useState(0);
-    const [resultC, setResultC] = useState(0);
+    const [resultA, setResultA] = useState('');
+    const [resultB, setResultB] = useState('');
+    const [resultC, setResultC] = useState('');
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
