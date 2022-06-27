@@ -3,7 +3,10 @@ import axios from "axios";
 import { Navigate, useParams } from "react-router-dom"
 import { Table, Nav ,Spinner, Modal, Button, Form} from 'react-bootstrap'
 import Moment from 'moment';
-import DateTimePicker from 'react-datetime-picker';
+// import DateTimePicker from 'react-datetime-picker';
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
@@ -12,14 +15,14 @@ const EditData = (props) => {
     const [isLoading,setisLoading] = useState(false);
     const [sattaList, setSattaList] = useState([])
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+    const [description, setDescription] = useState(' ');
     const [resultDate, setResultDate] = useState(new Date());
     const [resultA, setResultA] = useState(0);
     const [resultB, setResultB] = useState(0);
     const [resultC, setResultC] = useState(0);
 
-    const URL = 'http://localhost:3003'
-    // const URL = 'https://satta-backend.herokuapp.com'
+    // const URL = 'http://localhost:3003'
+    const URL = 'https://satta-backend.herokuapp.com'
 
     // const { id } = useParams();
     // console.log(props.history);
@@ -41,7 +44,8 @@ const EditData = (props) => {
             setSattaList(data.data.sattaList);
             setTitle(data.data.title);
             setDescription(data.data.description);
-            setResultDate(Moment(data.data.resultDate).toDate());
+            // setResultDate(Moment(data.data.resultDate).toDate());
+            setResultDate(Moment(data.data.resultDate).format('YYYY/MM/DD hh:mm A'))
             // console.log('d string ',Moment(data.data.resultDate).toDate());
             setResultA(data.data.resultA);
             setResultB(data.data.resultB);
@@ -115,16 +119,24 @@ const EditData = (props) => {
                             <label >Title</label>
                             <input type="text" className="form-control"  placeholder="Enter Title" name="title" onChange={(e) => setTitle(e.target.value)} value={title}/>
                         </div>
-                        <div className="mb-3 mt-3">
+                        {/* <div className="mb-3 mt-3">
                             <label >Description</label>
                             <textarea className="form-control"  placeholder="Enter Title" name="Description" onChange={(e) => setDescription(e.target.value)} value={description}></textarea>
-                        </div>
+                        </div> */}
                         <div className="mb-3 mt-3">
                             <label >Result Date:</label>
-                            <DateTimePicker 
+                            {/* <DateTimePicker 
                                 name="date"
                                 className={'form-control'}
-                                onChange={setResultDate} value={resultDate} minDate={new Date()}/>
+                                onChange={setResultDate} value={resultDate} minDate={new Date()}/> */}
+                                <DatePicker 
+                                showTimeSelect
+                                name="date"
+                                className={'form-control'}
+                                timeIntervals={20}
+                                onChange={(date) => { 
+                                    console.log(date);
+                                    setResultDate(Moment(date).format('YYYY/MM/DD hh:mm A')) }} value={resultDate} />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result A</label>

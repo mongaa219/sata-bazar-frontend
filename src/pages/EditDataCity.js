@@ -3,8 +3,10 @@ import axios from "axios";
 import { Navigate, useParams } from "react-router-dom"
 import { Table, Nav ,Spinner, Modal, Button, Form} from 'react-bootstrap'
 import Moment from 'moment';
-import DateTimePicker from 'react-datetime-picker';
+// import DateTimePicker from 'react-datetime-picker';
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 const EditData = (props) => {
@@ -12,7 +14,7 @@ const EditData = (props) => {
     const [isLoading,setisLoading] = useState(false);
     const [sattaList, setSattaList] = useState([])
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+    const [description, setDescription] = useState(' ');
     const [resultDate, setResultDate] = useState(new Date());
     const [resultA, setResultA] = useState(0);
     const [resultB, setResultB] = useState(0);
@@ -43,7 +45,8 @@ const EditData = (props) => {
             setSattaList(data.data.sattaList);
             setTitle(data.data.title);
             setDescription(data.data.description);
-            setResultDate(Moment(data.data.resultDate).toDate());
+            // setResultDate(Moment(data.data.resultDate).toDate());
+            setResultDate(Moment(data.data.resultDate).format('YYYY/MM/DD'))
             // console.log('d string ',Moment(data.data.resultDate).toDate());
             setResultA(data.data.resultA);
             setResultB(data.data.resultB);
@@ -123,10 +126,16 @@ const EditData = (props) => {
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result Date:</label>
-                            <DateTimePicker 
+                            {/* <DateTimePicker 
                                 name="date"
                                 className={'form-control'}
-                                onChange={setResultDate} value={resultDate} minDate={new Date()}/>
+                                onChange={setResultDate} value={resultDate} minDate={new Date()}/> */}
+                                <DatePicker 
+                                name="date"
+                                className={'form-control'}
+                                onChange={(date) => { 
+                                    console.log(date);
+                                    setResultDate(Moment(date).format('YYYY/MM/DD')) }} value={resultDate} />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result A</label>

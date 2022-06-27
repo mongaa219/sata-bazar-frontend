@@ -8,6 +8,9 @@ import Moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faEdit } from '@fortawesome/free-solid-svg-icons'
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 //  for icons
 // npm i --save @fortawesome/fontawesome-svg-core
 // npm install --save @fortawesome/free-solid-svg-icons
@@ -17,23 +20,27 @@ import { faCoffee, faEdit } from '@fortawesome/free-solid-svg-icons'
 const HomeCity = (props) => {
     const [isLoading,setisLoading] = useState(true);
     const [sattaList, setSattaList] = useState([])
+    const [dateinput,filterDateinput] = useState()
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
   
-  const getList = async () => {
+  const getList = async (date) => {
+    filterDateinput(date)
     let token = localStorage.getItem('loginToken')
     const headers = {
         'Content-Type': 'application/json',
         'token': token
       }
-      await axios.get(URL+'/api/admin/city/get',{
+      setisLoading(true)
+      await axios.get(URL+'/api/admin/city/get?date='+Moment(date).format('YYYY-MM'),{
           headers : headers
       }).then((data) => {
         setisLoading(false)
           console.log(data);
           setSattaList(data.data)
       }).catch((er) => {
+        setisLoading(false)
           if (er.response.status == 401) {
               console.log('getting eror ');
               console.log(er.response.status);
@@ -43,7 +50,9 @@ const HomeCity = (props) => {
       })
   }
   useEffect(() => {
-    getList();
+    getList(Moment(new Date()).format('YYYY/MM'));
+    // console.log(Moment(new Date()).format('DD/MM/YYYY'));
+    // filterDateinput(Moment(new Date()).format('DD-MM-YYYY'))
   },[])
   return (
       <>
@@ -63,7 +72,30 @@ const HomeCity = (props) => {
                                 </button>
                             </Link>
                         </div>
-                        <div className='col-md-1'></div>
+                        <div className='col-md-1'>
+                            <div className='form-group'>
+                                <label>Select date</label>
+                                <DatePicker 
+                                name="date"
+                                className={'form-control'}
+                                dateFormat="YYYY/MM"
+                                showMonthYearPicker
+                                onChange={
+                                    (date) => {
+                                        console.log(date);
+                                        getList(Moment(date).format('YYYY/MM'))
+                                    }
+                                }
+                                value={dateinput} />
+                                {/* <input type="date" className="form-control" value={dateinput} 
+                                    onChange={
+                                        (e) => {
+                                            console.log(e.target.value);
+                                        }
+                                    }
+                                /> */}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className={(!isLoading) ? 'col-md-12 ':'col-md-12 loader-ns'}>
@@ -76,16 +108,16 @@ const HomeCity = (props) => {
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>
-                                    <th>#</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Date Time</th>
-                                    <th>Disawer</th>
-                                    <th>Fridabad</th>
-                                    <th>Gaziyabad</th>
-                                    <th>Gali</th>
-                                    <th>Nva Savera</th>
-                                    <th>Action</th>
+                                    <th className='ns-city-table high columns-nst'>#</th>
+                                    <th className='ns-city-table columns-nst'>Title</th>
+                                    {/* <th>Description</th> */}
+                                    <th className='ns-city-table columns-nst'>Date Time</th>
+                                    <th className='ns-city-table columns-nst'>Disawer</th>
+                                    <th className='ns-city-table columns-nst'>Fridabad</th>
+                                    <th className='ns-city-table columns-nst'>Gaziyabad</th>
+                                    <th className='ns-city-table columns-nst'>Gali</th>
+                                    <th className='ns-city-table columns-nst'>Nva Savera</th>
+                                    <th className='ns-city-table columns-nst'>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -93,15 +125,15 @@ const HomeCity = (props) => {
                                         return (
                                         <tr key={i}>
                                             <td>{ i + 1}</td>
-                                            <td>{ ls.title }</td>
-                                            <td>{ ls.description }</td>
-                                            <td>{ Moment(ls.resultDate).format('YYYY-MM-DD hh:mm A') }</td>
-                                            <td>{ (!ls.resultA) ? '-' : ls.resultA }</td>
-                                            <td>{ (!ls.resultB) ? '-' : ls.resultB }</td>
-                                            <td>{ (!ls.resultC) ? '-' : ls.resultC }</td>
-                                            <td>{ (!ls.resultD) ? '-' : ls.resultD }</td>
-                                            <td>{ (!ls.resultE) ? '-' : ls.resultE }</td>
-                                            <td>
+                                            <td className='columns-ns'>{ ls.title }</td>
+                                            {/* <td>{ ls.description }</td> */}
+                                            <td className='columns-ns hight'>{ Moment(ls.resultDate).format('YYYY-MM-DD') }</td>
+                                            <td className='columns-ns'>{ (!ls.resultA) ? '-' : ls.resultA }</td>
+                                            <td className='columns-ns'>{ (!ls.resultB) ? '-' : ls.resultB }</td>
+                                            <td className='columns-ns'>{ (!ls.resultC) ? '-' : ls.resultC }</td>
+                                            <td className='columns-ns'>{ (!ls.resultD) ? '-' : ls.resultD }</td>
+                                            <td className='columns-ns'>{ (!ls.resultE) ? '-' : ls.resultE }</td>
+                                            <td className='columns-ns'>
                                                 <Link to={'/edit-city/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />
                                                 </Link>

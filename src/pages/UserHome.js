@@ -8,6 +8,9 @@ import Moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faEdit } from '@fortawesome/free-solid-svg-icons'
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 //  for icons
 // npm i --save @fortawesome/fontawesome-svg-core
 // npm install --save @fortawesome/free-solid-svg-icons
@@ -115,8 +118,11 @@ const UserHome = (props) => {
   const filterData = (arr,search,format = 'YYYY-MM-DD') => {
       for (let i = 0; i < arr.length; i++) {
         //   console.log(Moment(arr[i].resultDate).format('YYYY-MM-DD') +" == "+ Moment(search).format('YYYY-MM-DD'));
-          if(Moment(arr[i].resultDate).format(format) == Moment(search).format(format))
-          {
+        if(Moment(arr[i].resultDate).format(format) == Moment(search).format(format))
+        {
+            console.log('UTC ==>  ',arr[i].resultDate);
+            console.log('match ==>  ',Moment(arr[i].resultDate).format(format));
+              
               return arr[i];
           }
       }

@@ -17,11 +17,11 @@ const AddNewDataCity = (props) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [resultDate, setResultDate] = useState(new Date());
-    const [resultA, setResultA] = useState(0);
-    const [resultB, setResultB] = useState(0);
-    const [resultC, setResultC] = useState(0);
-    const [resultD, setResultD] = useState(0);
-    const [resultE, setResultE] = useState(0);
+    const [resultA, setResultA] = useState('');
+    const [resultB, setResultB] = useState('');
+    const [resultC, setResultC] = useState('');
+    const [resultD, setResultD] = useState('');
+    const [resultE, setResultE] = useState('');
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
@@ -32,7 +32,7 @@ const AddNewDataCity = (props) => {
       e.preventDefault();
       let submit_data = {
         title : title,
-        resultDate : resultDate,
+        resultDate : Moment(resultDate).format('YYYY/MM/DD hh:mm A'),
         resultA : resultA,
         resultB : resultB,
         resultC : resultC,
@@ -85,16 +85,12 @@ const AddNewDataCity = (props) => {
                         <div className="mb-3 mt-3">
                             <label >Result Date:</label>
                             <DatePicker 
-                                showTimeSelect
                                 name="date"
                                 className={'form-control'}
-                                timeIntervals={20}
-                                locale="pt-BR"
-                                timeFormat="p"
                                 dateFormat="Pp"
                                 onChange={(date) => { 
                                     console.log(date);
-                                    setResultDate(Moment(date).format('YYYY/MM/DD hh:mm A')) }} value={resultDate} />
+                                    setResultDate(Moment(date).format('YYYY/MM/DD')) }} value={resultDate} />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Disawer</label>

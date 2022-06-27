@@ -13,11 +13,11 @@ const AddNewData = (props) => {
     const [isLoading,setisLoading] = useState(false);
     const [sattaList, setSattaList] = useState([])
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
+    const [description, setDescription] = useState(' ');
     const [resultDate, setResultDate] = useState(new Date());
-    const [resultA, setResultA] = useState(0);
-    const [resultB, setResultB] = useState(0);
-    const [resultC, setResultC] = useState(0);
+    const [resultA, setResultA] = useState('');
+    const [resultB, setResultB] = useState('');
+    const [resultC, setResultC] = useState('');
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
@@ -77,10 +77,10 @@ const AddNewData = (props) => {
                             <label >Title</label>
                             <input type="text" className="form-control"  placeholder="Enter Title" name="title" onChange={(e) => setTitle(e.target.value)}/>
                         </div>
-                        <div className="mb-3 mt-3">
+                        {/* <div className="mb-3 mt-3">
                             <label >Description</label>
                             <textarea className="form-control"  placeholder="Enter Title" name="Description" onChange={(e) => setDescription(e.target.value)}></textarea>
-                        </div>
+                        </div> */}
                         <div className="mb-3 mt-3">
                             <label >Result Date:</label>
                             <DatePicker 
@@ -88,9 +88,6 @@ const AddNewData = (props) => {
                                 name="date"
                                 className={'form-control'}
                                 timeIntervals={20}
-                                locale="pt-BR"
-                                timeFormat="p"
-                                dateFormat="Pp"
                                 onChange={(date) => { 
                                     console.log(date);
                                     setResultDate(Moment(date).format('YYYY/MM/DD hh:mm A')) }} value={resultDate} />

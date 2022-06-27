@@ -8,6 +8,9 @@ import Moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faEdit } from '@fortawesome/free-solid-svg-icons'
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 //  for icons
 // npm i --save @fortawesome/fontawesome-svg-core
 // npm install --save @fortawesome/free-solid-svg-icons
@@ -17,16 +20,19 @@ import { faCoffee, faEdit } from '@fortawesome/free-solid-svg-icons'
 const Home = (props) => {
     const [isLoading,setisLoading] = useState(true);
     const [sattaList, setSattaList] = useState([])
+    const [dateinput,filterDateinput] = useState()
+    
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
   
-  const getList = async () => {
+  const getList = async (date) => {
+    filterDateinput(date)
     let token = localStorage.getItem('loginToken')
     const headers = {
         'Content-Type': 'application/json',
         'token': token
       }
-      await axios.get(URL+'/api/admin/get',{
+      await axios.get(URL+'/api/admin/get?date='+date,{
           headers : headers
       }).then((data) => {
         setisLoading(false)
@@ -42,7 +48,8 @@ const Home = (props) => {
       })
   }
   useEffect(() => {
-    getList();
+    // getList();
+    getList(Moment(new Date()).format('YYYY/MM/DD'));
   },[])
   return (
       <>
@@ -62,7 +69,29 @@ const Home = (props) => {
                                 </button>
                             </Link>
                         </div>
-                        <div className='col-md-1'></div>
+                        <div className='col-md-1'>
+                            <div className='form-group'>
+                                <label>Select date</label>
+                                <DatePicker 
+                                name="date"
+                                className={'form-control'}
+                                dateFormat="YYYY/MM/DD"
+                                onChange={
+                                    (date) => {
+                                        console.log(date);
+                                        getList(Moment(date).format('YYYY/MM/DD'))
+                                    }
+                                }
+                                value={dateinput} />
+                                {/* <input type="date" className="form-control" value={dateinput} 
+                                    onChange={
+                                        (e) => {
+                                            console.log(e.target.value);
+                                        }
+                                    }
+                                /> */}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className={(!isLoading) ? 'col-md-12 ':'col-md-12 loader-ns'}>
@@ -75,28 +104,28 @@ const Home = (props) => {
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>
-                                    <th>#</th>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Date Time</th>
-                                    <th>Result A</th>
-                                    <th>Result B</th>
-                                    <th>Result C</th>
-                                    <th>Action</th>
+                                    <th className='ns-city-table hight ns-result'>#</th>
+                                    <th className='ns-city-table columns-ns'>Title</th>
+                                    {/* <th>Description</th> */}
+                                    <th className='ns-city-table columns-ns'>Date Time</th>
+                                    <th className='ns-city-table columns-ns'>Result A</th>
+                                    <th className='ns-city-table columns-ns'>Result B</th>
+                                    <th className='ns-city-table columns-ns'>Result C</th>
+                                    <th className='ns-city-table columns-ns'>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     { sattaList.map((ls,i) => {
                                         return (
                                         <tr key={i}>
-                                            <td>{ i + 1}</td>
-                                            <td>{ ls.title }</td>
-                                            <td>{ ls.description }</td>
-                                            <td>{ Moment(ls.resultDate).format('YYYY-MM-DD hh:mm A') }</td>
-                                            <td>{ (!ls.resultA) ? '-' : ls.resultA }</td>
-                                            <td>{ (!ls.resultB) ? '-' : ls.resultB }</td>
-                                            <td>{ (!ls.resultC) ? '-' : ls.resultC }</td>
-                                            <td>
+                                            <td className='columns-ns-resultls'>{ i + 1}</td>
+                                            <td className='columns-ns-resultls'>{ ls.title }</td>
+                                            {/* <td>{ ls.description }</td> */}
+                                            <td className='columns-ns-resultls'>{ Moment(ls.resultDate).format('YYYY-MM-DD hh:mm A') }</td>
+                                            <td className='columns-ns-resultls'>{ ls.resultA }</td>
+                                            <td className='columns-ns-resultls'>{ ls.resultB }</td>
+                                            <td className='columns-ns-resultls'>{ ls.resultC }</td>
+                                            <td className='columns-ns-resultls'>
                                                 <Link to={'/edit/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />
                                                 </Link>
