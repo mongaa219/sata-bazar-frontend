@@ -3,7 +3,9 @@ import axios from "axios";
 import { Navigate } from "react-router-dom"
 import { Table, Nav ,Spinner, Modal, Button, Form} from 'react-bootstrap'
 import Moment from 'moment';
-import DateTimePicker from 'react-datetime-picker';
+// import DateTimePicker from 'react-datetime-picker';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
@@ -81,12 +83,17 @@ const AddNewData = (props) => {
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result Date:</label>
-                            <DateTimePicker 
+                            <DatePicker 
+                                showTimeSelect
                                 name="date"
                                 className={'form-control'}
+                                timeIntervals={20}
+                                locale="pt-BR"
+                                timeFormat="p"
+                                dateFormat="Pp"
                                 onChange={(date) => { 
                                     console.log(date);
-                                    setResultDate(date) }} value={resultDate}/>
+                                    setResultDate(Moment(date).format('YYYY/MM/DD hh:mm A')) }} value={resultDate} />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result A</label>
