@@ -139,23 +139,23 @@ const EditData = (props) => {
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result A</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultA" onChange={(e) => setResultA(e.target.value)} value={resultA}/>
+                            <input type="number" className="form-control" name="resultA" onChange={(e) => setResultA(e.target.value)} value={resultA} placeholder="Result A" />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Gali</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultB" onChange={(e) => setResultB(e.target.value)} value={resultB}/>
+                            <input type="number" className="form-control" name="resultB" onChange={(e) => setResultB(e.target.value)} value={resultB} placeholder="Gali" />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Nva Savera</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultC" onChange={(e) => setResultC(e.target.value)} value={resultC}/>
+                            <input type="number" className="form-control" name="resultC" onChange={(e) => setResultC(e.target.value)} value={resultC} placeholder="Nva Savera" />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Gali</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultD" onChange={(e) => setResultC(e.target.value)} value={resultD}/>
+                            <input type="number" className="form-control" name="resultD" onChange={(e) => setResultC(e.target.value)} value={resultD} placeholder="Gali" />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Nva Savera</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultE" onChange={(e) => setResultC(e.target.value)} value={resultE}/>
+                            <input type="number" className="form-control" name="resultE" onChange={(e) => setResultC(e.target.value)} value={resultE} placeholder="Nva Savera" />
                         </div>
                         <button type="submit" className="btn btn-primary">
                             {!isLoading && 'Submit'}

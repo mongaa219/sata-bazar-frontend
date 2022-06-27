@@ -140,15 +140,15 @@ const EditData = (props) => {
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result A</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultA" onChange={(e) => setResultA(e.target.value)} value={resultA}/>
+                            <input type="number" className="form-control"  placeholder="Result A" name="resultA" onChange={(e) => setResultA(e.target.value)} value={resultA}/>
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result B:</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultB" onChange={(e) => setResultB(e.target.value)} value={resultB}/>
+                            <input type="number" className="form-control"  placeholder="Result B" name="resultB" onChange={(e) => setResultB(e.target.value)} value={resultB}/>
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Result C:</label>
-                            <input type="number" className="form-control"  placeholder="Enter Title" name="resultC" onChange={(e) => setResultC(e.target.value)} value={resultC}/>
+                            <input type="number" className="form-control"  placeholder="Result C" name="resultC" onChange={(e) => setResultC(e.target.value)} value={resultC}/>
                         </div>
                         <button type="submit" className="btn btn-primary">
                             {!isLoading && 'Submit'}
