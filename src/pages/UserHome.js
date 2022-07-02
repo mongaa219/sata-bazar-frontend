@@ -59,9 +59,11 @@ const UserHome = (props) => {
   const getList = async (d = nsdate) => {
     let token = localStorage.getItem('loginToken')
     setisLoading(true)
+    // 'Content-Type': 'application/json',
     const headers = {
-        'Content-Type': 'application/json',
-        'secret-key': '#1234nirmaljeetdeveloper987654321#satta#free#react#**project123456789#./'
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+        'secret-key': '#1234nirmaljeetdeveloper987654321#satta#free#react#**project123456789#'
       }
       console.log(d);
       if(!d || d === undefined)
@@ -131,9 +133,11 @@ const UserHome = (props) => {
   const getListCities = async (d) => {
     let token = localStorage.getItem('loginToken')
     setisLoading(true)
+    // 'Content-Type': 'application/json',
     const headers = {
-        'Content-Type': 'application/json',
-        'secret-key': '#1234nirmaljeetdeveloper987654321#satta#free#react#**project123456789#./'
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
+        'secret-key': '#1234nirmaljeetdeveloper987654321#satta#free#react#**project123456789#'
       }
       console.log(d);
       if(d === undefined)
