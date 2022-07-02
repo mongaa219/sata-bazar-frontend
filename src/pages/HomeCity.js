@@ -34,7 +34,7 @@ const HomeCity = (props) => {
       }
       setisLoading(true)
       await axios.get(URL+'/api/admin/city/get?date='+Moment(date).format('YYYY-MM'),{
-          headers : headers
+          headers
       }).then((data) => {
         setisLoading(false)
           console.log(data);

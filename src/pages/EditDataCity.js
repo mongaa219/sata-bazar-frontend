@@ -34,7 +34,7 @@ const EditData = (props) => {
             'token': token
           }
           await axios.get(URL+'/api/admin/city/get/'+id,{
-              headers : headers
+               headers
           }).then((data) => {
             setisLoading(false)
             if(!data.data){

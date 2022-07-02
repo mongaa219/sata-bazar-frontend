@@ -84,7 +84,7 @@ const EditData = (props) => {
       console.log(headers);
       console.log(submit_data);
       await axios.post(URL+'/api/admin/satta/'+id,submit_data,{
-          headers : headers
+          headers
       }).then((data) => {
         setisLoading(false)
         console.log(data);

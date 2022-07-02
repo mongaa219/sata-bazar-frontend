@@ -42,7 +42,7 @@ const AddNewData = (props) => {
       console.log(headers);
       console.log(submit_data);
       await axios.post(URL+'/api/admin/satta',submit_data,{
-          headers : headers
+          headers
       }).then((data) => {
         setisLoading(false)
         console.log(data);

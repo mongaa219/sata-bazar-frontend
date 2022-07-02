@@ -69,7 +69,7 @@ const UserHome = (props) => {
           d = makeTime()
       }
       await axios.get(URL+'/api/get?date='+d,{
-          headers : headers
+          headers
       }).then((data) => { 
         setisLoading(false)
           console.log(data.data);
@@ -142,7 +142,7 @@ const UserHome = (props) => {
       }
       let newMonth = Moment(d).format('YYYY-MM')
       await axios.get(URL+'/api/city/get?date='+newMonth,{
-          headers : headers
+          headers
       }).then((data) => {
         setisLoading(false)
             // console.log(' ======================================================================');

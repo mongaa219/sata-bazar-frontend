@@ -21,7 +21,7 @@ const Home = (props) => {
     const [isLoading,setisLoading] = useState(true);
     const [sattaList, setSattaList] = useState([])
     const [dateinput,filterDateinput] = useState()
-    
+
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
   
@@ -33,7 +33,7 @@ const Home = (props) => {
         'token': token
       }
       await axios.get(URL+'/api/admin/get?date='+date,{
-          headers : headers
+           headers
       }).then((data) => {
         setisLoading(false)
           console.log(data);
