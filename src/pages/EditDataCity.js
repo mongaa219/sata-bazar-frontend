@@ -139,24 +139,24 @@ const EditData = (props) => {
                                     setResultDate(Moment(date).format('YYYY/MM/DD')) }} value={resultDate} />
                         </div>
                         <div className="mb-3 mt-3">
-                            <label >Result A</label>
-                            <input type="number" className="form-control" name="resultA" onChange={(e) => setResultA(e.target.value)} value={resultA} placeholder="Result A" />
+                            <label >Disawar</label>
+                            <input type="number" className="form-control" name="resultA" onChange={(e) => setResultA(e.target.value)} value={resultA} placeholder="Disawar" />
+                        </div>
+                        <div className="mb-3 mt-3">
+                            <label >Fridabad</label>
+                            <input type="number" className="form-control" name="resultB" onChange={(e) => setResultB(e.target.value)} value={resultB} placeholder="Gaziyabad" />
+                        </div>
+                        <div className="mb-3 mt-3">
+                            <label >Gaziyabad</label>
+                            <input type="number" className="form-control" name="resultC" onChange={(e) => setResultC(e.target.value)} value={resultC} placeholder="Gaziyabad" />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Gali</label>
-                            <input type="number" className="form-control" name="resultB" onChange={(e) => setResultB(e.target.value)} value={resultB} placeholder="Gali" />
+                            <input type="number" className="form-control" name="resultD" onChange={(e) => setResultD(e.target.value)} value={resultD} placeholder="Gali" />
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Nva Savera</label>
-                            <input type="number" className="form-control" name="resultC" onChange={(e) => setResultC(e.target.value)} value={resultC} placeholder="Nva Savera" />
-                        </div>
-                        <div className="mb-3 mt-3">
-                            <label >Gali</label>
-                            <input type="number" className="form-control" name="resultD" onChange={(e) => setResultC(e.target.value)} value={resultD} placeholder="Gali" />
-                        </div>
-                        <div className="mb-3 mt-3">
-                            <label >Nva Savera</label>
-                            <input type="number" className="form-control" name="resultE" onChange={(e) => setResultC(e.target.value)} value={resultE} placeholder="Nva Savera" />
+                            <input type="number" className="form-control" name="resultE" onChange={(e) => setResultE(e.target.value)} value={resultE} placeholder="Nva Savera" />
                         </div>
                         <button type="submit" className="btn btn-primary">
                             {!isLoading && 'Submit'}
