@@ -26,14 +26,18 @@ const Home = (props) => {
     const URL = 'https://satta-backend.herokuapp.com'
   
   const getList = async (date) => {
-      if(date == 'Invalid date') return false;
-    filterDateinput(date)
+    //   if(date == 'Invalid date') return false;
     let token = localStorage.getItem('loginToken')
     const headers = {
         'Content-Type': 'application/json;charset=UTF-8',
         "Access-Control-Allow-Origin": "*",
         'token': token
       }
+      if(!date || date === undefined)
+      {
+        date = Moment().format('YYYY/MM/DD')
+      }
+      filterDateinput(date)
       await axios.get(URL+'/api/admin/get?date='+Moment(date).format('YYYY-MM-DD'),{
            headers
       }).then((data) => {

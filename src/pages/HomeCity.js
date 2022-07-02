@@ -26,13 +26,18 @@ const HomeCity = (props) => {
     const URL = 'https://satta-backend.herokuapp.com'
   
   const getList = async (date) => {
-    filterDateinput(date)
+    // filterDateinput(date)
     let token = localStorage.getItem('loginToken')
     const headers = {
         'Content-Type': 'application/json;charset=UTF-8',
         "Access-Control-Allow-Origin": "*",
         'token': token
       }
+      if(!date || date === undefined)
+      {
+        date = Moment().format('YYYY/MM')
+      }
+      filterDateinput(date)
       setisLoading(true)
       await axios.get(URL+'/api/admin/city/get?date='+Moment(date).format('YYYY-MM'),{
           headers
