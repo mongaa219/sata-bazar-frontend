@@ -41,7 +41,7 @@ const UserHome = (props) => {
             'secret-key': '#1234nirmaljeetdeveloper987654321#satta#free#react#**project123456789#'
             }
             await axios.get(URL+'/api/announcment',{
-                headers : headers
+                 headers
             }).then((data) => { 
             // setisLoading(false)
                 console.log(data);

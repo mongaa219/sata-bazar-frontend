@@ -30,7 +30,8 @@ const EditData = (props) => {
     const getSataOne = async (id) => {
         let token = localStorage.getItem('loginToken')
         const headers = {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json;charset=UTF-8',
+            "Access-Control-Allow-Origin": "*",
             'token': token
           }
           await axios.get(URL+'/api/admin/city/get/'+id,{

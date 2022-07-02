@@ -36,7 +36,8 @@ const AddNewData = (props) => {
       };
       let token = localStorage.getItem('loginToken')
     const headers = {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Access-Control-Allow-Origin": "*",
         'token': token,
       }
       console.log(headers);
