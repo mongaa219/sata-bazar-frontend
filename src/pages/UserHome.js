@@ -36,8 +36,9 @@ const UserHome = (props) => {
         let token = localStorage.getItem('loginToken')
         // setisLoading(true)
         const headers = {
-            'Content-Type': 'application/json',
-            'secret-key': '#1234nirmaljeetdeveloper987654321#satta#free#react#**project123456789#./'
+            'Content-Type': 'application/json;charset=UTF-8',
+            "Access-Control-Allow-Origin": "*",
+            'secret-key': '#1234nirmaljeetdeveloper987654321#satta#free#react#**project123456789#'
             }
             await axios.get(URL+'/api/announcment',{
                 headers : headers
