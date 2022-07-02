@@ -37,7 +37,7 @@ const AddNewData = (props) => {
       let token = localStorage.getItem('loginToken')
     const headers = {
         'Content-Type': 'application/json',
-        'token': token
+        'token': token,
       }
       console.log(headers);
       console.log(submit_data);

@@ -6,6 +6,7 @@ import Moment from 'moment';
 // import DateTimePicker from 'react-datetime-picker';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+// import '../datepiker.scss';
 
 
 
@@ -91,6 +92,9 @@ const AddNewDataCity = (props) => {
                                 onChange={(date) => { 
                                     console.log(date);
                                     setResultDate(Moment(date).format('YYYY/MM/DD')) }} value={resultDate} />
+                                {/* <input type="date" className={'form-control'} onChange={(e) => { 
+                                    console.log(e.target.value);
+                                    setResultDate(Moment(e.target.value).format('YYYY/MM/DD')) }} value={resultDate}/> */}
                         </div>
                         <div className="mb-3 mt-3">
                             <label >Disawer</label>
