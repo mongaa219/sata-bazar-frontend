@@ -51,7 +51,10 @@ const HomeCity = (props) => {
       })
   }
   useEffect(() => {
-    getList(Moment(new Date()).format('YYYY/MM'));
+    // getList(Moment(new Date()).format('YYYY/MM'));
+    let date = Moment().format('YYYY/MM')
+    console.log('init',date);
+    getList(date);
     // console.log(Moment(new Date()).format('DD/MM/YYYY'));
     // filterDateinput(Moment(new Date()).format('DD-MM-YYYY'))
   },[])

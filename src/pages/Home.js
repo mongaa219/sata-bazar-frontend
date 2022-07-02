@@ -26,6 +26,7 @@ const Home = (props) => {
     const URL = 'https://satta-backend.herokuapp.com'
   
   const getList = async (date) => {
+      if(date == 'Invalid date') return false;
     filterDateinput(date)
     let token = localStorage.getItem('loginToken')
     const headers = {
@@ -50,7 +51,9 @@ const Home = (props) => {
   }
   useEffect(() => {
     // getList();
-    getList(Moment(new Date()).format('YYYY/MM/DD'));
+    let date = Moment().format('YYYY/MM/DD')
+    console.log('init',date);
+    getList(date);
   },[])
   return (
       <>
