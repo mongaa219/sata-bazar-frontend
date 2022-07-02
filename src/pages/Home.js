@@ -33,7 +33,7 @@ const Home = (props) => {
         "Access-Control-Allow-Origin": "*",
         'token': token
       }
-      await axios.get(URL+'/api/admin/get?date='+date,{
+      await axios.get(URL+'/api/admin/get?date='+Moment(date).format('YYYY-MM-DD'),{
            headers
       }).then((data) => {
         setisLoading(false)
