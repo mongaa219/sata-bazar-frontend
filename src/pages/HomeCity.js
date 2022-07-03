@@ -21,6 +21,7 @@ const HomeCity = (props) => {
     const [isLoading,setisLoading] = useState(true);
     const [sattaList, setSattaList] = useState([])
     const [dateinput,filterDateinput] = useState()
+    const [dateApi,setDateAPI] = useState('')
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
@@ -35,11 +36,13 @@ const HomeCity = (props) => {
       }
       if(!date || date === undefined)
       {
-        date = Moment().format('YYYY/MM')
+        date = Moment().format('YYYY-MM')
       }
       filterDateinput(date)
       setisLoading(true)
-      await axios.get(URL+'/api/admin/city/get?date='+Moment(date).format('YYYY-MM'),{
+
+      setDateAPI(Moment(date).format('YYYY-MM'));
+      await axios.get(URL+'/api/admin/city/get?date='+date,{
           headers
       }).then((data) => {
         setisLoading(false)
@@ -57,7 +60,7 @@ const HomeCity = (props) => {
   }
   useEffect(() => {
     // getList(Moment(new Date()).format('YYYY/MM'));
-    let date = Moment().format('YYYY/MM')
+    let date = Moment().format('YYYY-MM')
     console.log('init',date);
     getList(date);
     // console.log(Moment(new Date()).format('DD/MM/YYYY'));
@@ -87,12 +90,12 @@ const HomeCity = (props) => {
                                 <DatePicker 
                                 name="date"
                                 className={'form-control'}
-                                dateFormat="YYYY/MM"
+                                dateFormat="YYYY-MM"
                                 showMonthYearPicker
                                 onChange={
                                     (date) => {
                                         console.log(date);
-                                        getList(Moment(date).format('YYYY/MM'))
+                                        getList(Moment(date).format('YYYY-MM'))
                                     }
                                 }
                                 value={dateinput} />
