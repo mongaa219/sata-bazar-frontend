@@ -20,6 +20,37 @@ body {
   margin-left: -4em;
   z-index: 99999999999;
 }
+.add-box-1 {
+  background-color:#99ff99 ;color:PINK;font-weight: bold;border: double 3px blue;
+  padding: 5px;border-radius: 20px;text-align: center;
+  margin-bottom: 0px;
+}
+.add-box-1-p1
+{
+  font-size: 16px; color: black; font-weight: bold;
+}
+.add-box-1-p2
+{
+  font-size:18px; color:#8b0000;font-weight: bold;
+  margin-bottom: 0px;
+}
+.add-box-1-p3
+{
+  font-size:18px; color:BLUE;font-weight: bold;
+  margin-bottom: 0px;
+}
+.add-box-1-p4
+{
+  font-size:22px; color:red;font-weight: bold;
+}
+.add-box-1-btn1
+{
+  height: 35px;width: 160px;background-color: BLUE;color:#FFF;border: double 3px red;border-radius: 20px;font-weight: bold;
+}
+.add-box-1-btn2
+{
+  height: 35px;width: 135px;background-color: GREEN;color:#FFF;border: double 3px red;border-radius: 20px;font-weight: bold;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

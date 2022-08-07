@@ -24,6 +24,10 @@ const UserHome = (props) => {
 
     const [siteTitle,setSiteTitle] = useState('Nva Savera');
     const [siteAnnouncement,setSiteAnnouncement] = useState('');
+
+    const [siteTitle2,setSiteTitle2] = useState('');
+    const [siteAnnouncement2,setSiteAnnouncement2] = useState('');
+
     const [adminno,setadminno] = useState('');
     let ab = 0;
 
@@ -48,6 +52,10 @@ const UserHome = (props) => {
                 let rs = data.data;
                 setSiteTitle(rs.title || 'Nva Savera')
                 setSiteAnnouncement(rs.description || '')
+
+                setSiteTitle2(rs.title2 || 'Nva Savera')
+                setSiteAnnouncement2(rs.description2 || '')
+
                 setadminno(rs.adminno || '')
             }).catch((er) => {
                 if (er.response.status == 401) {
@@ -262,6 +270,45 @@ const UserHome = (props) => {
                     </div>
                 </div>
                 <div className='col-md-12'>
+                    <div className='add-box-1'>
+                        <p className="add-box-1-p1">
+                            गली हो या Ranchi देसावर जोड़ी मिलेगी सिंगल  कंपनी लाखों लोगों ने ज्वाइन की हुई है जो की काफी सालो से जुड़े है हमारे साथ हर महीने 40 से 50 लाख का प्रॉफिट होता है हमारे भाईयों का 
+                        </p>
+                        <p className="add-box-1-p2" >गेम पास का प्रूफ देखने केलिए WhatApp करें</p>
+                        {/* <p></p> */}
+                        {/* <p className="add-box-1-p3">सुहाना गुप्ता - सट्टा कंपनी CEO &amp; MD</p> */}
+                        <p className="add-box-1-p4" >{adminno}</p>
+                        <a href="https://wa.me/9329286908">
+                            <button className='add-box-1-btn1'>
+                                <font size="4px"><b>WhatsApp Chat</b></font>
+                            </button>
+                        </a>
+                        <a href={'tel:>'+adminno}>
+                            <button className='add-box-1-btn2'><font size="4px"><b>Call Now</b></font></button>
+                        </a>
+                    </div>
+
+                </div>
+                <div className='col-md-12 mt-3'>
+                    <div className='add-box-1'>
+                        <p className="add-box-1-p1">
+                        सभी सट्टा खेलने वाले भाईयो के लिए खुश खबरी गली; दिसावर; गाजियाबाद ;और PUNE RANCHI DELHI GOLD में होगा सिंगल जोड़ी ब्लास्ट तो जिन भाईयो को लाखो का लॉस है होगा अब एक ही बार में कवर तो बिना समय निकालें जल्दी से जल्दी वॉट्सएप पर जुड़े और कमाए लाखो रुपए
+                        </p>
+                        {/* <p className="add-box-1-p2" >गेम पास का प्रूफ देखने केलिए WhatApp करें</p> */}
+                        {/* <p></p> */}
+                        {/* <p className="add-box-1-p3">सुहाना गुप्ता - सट्टा कंपनी CEO &amp; MD</p> */}
+                        <p className="add-box-1-p4" >{adminno}</p>
+                        <a href="https://wa.me/9329286908">
+                            <button className='add-box-1-btn1'>
+                                <font size="4px"><b>WhatsApp Chat</b></font>
+                            </button>
+                        </a>
+                        <a href={'tel:>'+adminno}>
+                            <button className='add-box-1-btn2'><font size="4px"><b>Call Now</b></font></button></a>
+                    </div>
+
+                </div>
+                <div className='col-md-12'>
                     <div className='row mt-2 mb-2'>
                         <div className='col-md-10 bg-black ns-heading-top'>
                             <center>
@@ -292,6 +339,8 @@ const UserHome = (props) => {
                         <div className='center bg-black'>
                                 <h2 className='white-color'>{ siteTitle }</h2>
                                 <h3 className='yellow-color'>{ siteAnnouncement }</h3>
+                                <h2 className='white-color'>{ siteTitle2 }</h2>
+                                <h3 className='yellow-color'>{ siteAnnouncement2 }</h3>
                                 {/* <h2 className='white-color'>{ siteTitle }</h2>
                                 <h3 className='yellow-color'>{ siteAnnouncement }</h3>
                                 <h2 className='white-color'>{ siteTitle }</h2>
