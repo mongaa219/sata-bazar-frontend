@@ -68,7 +68,7 @@ const HomeCity = (props) => {
   },[])
   return (
       <>
-        <div className='container'>
+        <div className='container admin-pages'>
             <div className='row'>
                 <div className='col-md-12'>
                     <div className='row mt-4 mb-4'>
@@ -129,6 +129,7 @@ const HomeCity = (props) => {
                                     <th className='ns-city-table columns-nst'>Gaziyabad</th>
                                     <th className='ns-city-table columns-nst'>Gali</th>
                                     <th className='ns-city-table columns-nst'>Nva Savera</th>
+                                    <th className='ns-city-table columns-nst'>Savera</th>
                                     <th className='ns-city-table columns-nst'>Action</th>
                                     </tr>
                                 </thead>
@@ -145,6 +146,7 @@ const HomeCity = (props) => {
                                             <td className='columns-ns'>{ (!ls.resultC) ? '-' : ls.resultC }</td>
                                             <td className='columns-ns'>{ (!ls.resultD) ? '-' : ls.resultD }</td>
                                             <td className='columns-ns'>{ (!ls.resultE) ? '-' : ls.resultE }</td>
+                                            <td className='columns-ns'>{ (!ls.resultF) ? '-' : ls.resultF }</td>
                                             <td className='columns-ns'>
                                                 <Link to={'/edit-city/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />

@@ -99,7 +99,7 @@ const Announcement = (props) => {
   },[])
   return (
       <>
-        <div className='container mt-3'>
+        <div className='container mt-3 admin-pages'>
             <div className='row'>
                 <div className='col-md-12'>
                     <form onSubmit={announcementAdd}>

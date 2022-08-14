@@ -20,6 +20,12 @@ body {
   margin-left: -4em;
   z-index: 99999999999;
 }
+.add-box-1-df {
+  background-color:#fff;
+  color:PINK;font-weight: bold;border: double 3px blue;
+  padding: 5px;border-radius: 20px;text-align: center;
+  margin-bottom: 0px;
+}
 .add-box-1 {
   background-color:#99ff99 ;color:PINK;font-weight: bold;border: double 3px blue;
   padding: 5px;border-radius: 20px;text-align: center;

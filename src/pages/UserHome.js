@@ -201,6 +201,7 @@ const UserHome = (props) => {
                          resultC : '',
                          resultD : '',
                          resultE : '',
+                         resultF : '',
                          resultDate : startdate,
                          resultDateTime : '',
                          createdAt : '',
@@ -290,13 +291,15 @@ const UserHome = (props) => {
 
                 </div>
                 <div className='col-md-12 mt-3'>
-                    <div className='add-box-1'>
+                    <div className='add-box-1-df'>
                         <p className="add-box-1-p1">
                         सभी सट्टा खेलने वाले भाईयो के लिए खुश खबरी गली; दिसावर; गाजियाबाद ;और PUNE RANCHI DELHI GOLD में होगा सिंगल जोड़ी ब्लास्ट तो जिन भाईयो को लाखो का लॉस है होगा अब एक ही बार में कवर तो बिना समय निकालें जल्दी से जल्दी वॉट्सएप पर जुड़े और कमाए लाखो रुपए
                         </p>
-                        {/* <p className="add-box-1-p2" >गेम पास का प्रूफ देखने केलिए WhatApp करें</p> */}
-                        {/* <p></p> */}
-                        {/* <p className="add-box-1-p3">सुहाना गुप्ता - सट्टा कंपनी CEO &amp; MD</p> */}
+                        <p className="add-box-1-p2" >गेम पास का प्रूफ देखने केलिए WhatApp करें</p>
+                        <p></p>
+                        <p className="add-box-1-p3">सुमन गुप्ता 
+                        {/* - सट्टा कंपनी  CEO &amp; MD */}
+                        </p>
                         <p className="add-box-1-p4" >{adminno}</p>
                         <a href="https://wa.me/9329286908">
                             <button className='add-box-1-btn1'>
@@ -400,6 +403,7 @@ const UserHome = (props) => {
                                     <th className='ns-city-table columns-ns'>Gaziyabad (09:00 PM)</th>
                                     <th className='ns-city-table columns-ns'>Gali (12:05 AM)</th>
                                     <th className='ns-city-table columns-ns'>Nva Savera (02:50 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Savera (03:00 PM)</th>
                                     {/* <th className='ns-city-table'>Action</th> */}
                                     </tr>
                                 </thead>
@@ -417,6 +421,7 @@ const UserHome = (props) => {
                                             <td className='columns-ns'>{ ls.resultC }</td>
                                             <td className='columns-ns'>{ ls.resultD }</td>
                                             <td className='columns-ns'>{ ls.resultE }</td>
+                                            <td className='columns-ns'>{ ls.resultF }</td>
                                             {/* <td>
                                                 <Link to={'/edit/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />

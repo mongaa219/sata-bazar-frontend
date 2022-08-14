@@ -61,7 +61,7 @@ const Home = (props) => {
   },[])
   return (
       <>
-        <div className='container'>
+        <div className='container admin-pages'>
             <div className='row'>
                 <div className='col-md-12'>
                     <div className='row mt-4 mb-4'>

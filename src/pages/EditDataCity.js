@@ -21,6 +21,7 @@ const EditData = (props) => {
     const [resultC, setResultC] = useState('');
     const [resultD, setResultD] = useState('');
     const [resultE, setResultE] = useState('');
+    const [resultF, setResultF] = useState('');
 
     // const URL = 'http://localhost:3003'
     const URL = 'https://satta-backend.herokuapp.com'
@@ -54,6 +55,7 @@ const EditData = (props) => {
             setResultC(data.data.resultC);
             setResultD(data.data.resultD);
             setResultE(data.data.resultE);
+            setResultF(data.data.resultF);
 
           }).catch((er) => {
               console.log(er);
@@ -79,7 +81,8 @@ const EditData = (props) => {
         resultB : resultB,
         resultC : resultC,
         resultD : resultD,
-        resultE : resultE
+        resultE : resultE,
+        resultF : resultF
       };
       let token = localStorage.getItem('loginToken')
     const headers = {
@@ -117,7 +120,7 @@ const EditData = (props) => {
   },[])
   return (
       <>
-        <div className='container mt-3'>
+        <div className='container mt-3 admin-pages'>
             <div className='row'>
                 <div className='col-md-12'>
                     <form onSubmit={sattaAdd}>
@@ -157,6 +160,10 @@ const EditData = (props) => {
                         <div className="mb-3 mt-3">
                             <label >Nva Savera</label>
                             <input type="number" className="form-control" name="resultE" onChange={(e) => setResultE(e.target.value)} value={resultE} placeholder="Nva Savera" />
+                        </div>
+                        <div className="mb-3 mt-3">
+                            <label >Savera</label>
+                            <input type="number" className="form-control" name="resultF" onChange={(e) => setResultF(e.target.value)} value={resultF} placeholder="Savera" />
                         </div>
                         <button type="submit" className="btn btn-primary">
                             {!isLoading && 'Submit'}
