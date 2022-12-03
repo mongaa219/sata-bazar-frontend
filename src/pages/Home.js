@@ -23,7 +23,8 @@ const Home = (props) => {
     const [dateinput,filterDateinput] = useState()
 
     // const URL = 'http://localhost:3003'
-    const URL = 'https://satta-backend.herokuapp.com'
+    // const URL = 'https://satta-backend.herokuapp.com'
+    const URL = 'http://107.20.102.114:8000'
   
   const getList = async (date) => {
     //   if(date == 'Invalid date') return false;

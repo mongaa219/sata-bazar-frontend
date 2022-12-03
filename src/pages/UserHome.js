@@ -32,7 +32,8 @@ const UserHome = (props) => {
     let ab = 0;
 
     // const URL = 'http://localhost:3003'
-    const URL = 'https://satta-backend.herokuapp.com'
+    // const URL = 'https://satta-backend.herokuapp.com'
+    const URL = 'http://107.20.102.114:8000'
     
     const [nsdate,setNsdate] = useState('');
 
