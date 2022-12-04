@@ -21,7 +21,7 @@ const AddNewData = (props) => {
 
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
-    const URL = 'http://107.20.102.114:8000'
+    const URL = 'https://107.20.102.114:8000'
     
   const sattaAdd = async (e) => {
     //   e.preveventDefault();
