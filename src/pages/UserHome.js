@@ -33,7 +33,7 @@ const UserHome = (props) => {
 
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
-    const URL = 'https://107.20.102.114'
+    const URL = 'http://44.207.30.122:9000'
     
     const [nsdate,setNsdate] = useState('');
 
@@ -120,6 +120,7 @@ const UserHome = (props) => {
             setSattaList(sattaListData)
           getListCities(d)
       }).catch((er) => {
+        setisLoading(false)
           console.log(er);
           if (er.response.status == 401) {
               console.log('getting eror ');
@@ -218,6 +219,7 @@ const UserHome = (props) => {
           setSattaListCity(cityData)
       }).catch((er) => {
           console.log('city data === >  ',er);
+          setisLoading(false)
           if(er.response)
           {
               if (er.response.status == 401) {

@@ -46,6 +46,7 @@ const Home = (props) => {
           console.log(data);
           setSattaList(data.data)
       }).catch((er) => {
+        setisLoading(false)
           if (er.response.status == 401) {
               console.log('getting eror ');
               console.log(er.response.status);
