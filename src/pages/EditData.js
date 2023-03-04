@@ -4,6 +4,7 @@ import { Navigate, useParams } from "react-router-dom"
 import { Table, Nav ,Spinner, Modal, Button, Form} from 'react-bootstrap'
 import Moment from 'moment';
 // import DateTimePicker from 'react-datetime-picker';
+import config from '../config'
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -23,7 +24,8 @@ const EditData = (props) => {
 
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
-    const URL = 'https://44.207.30.122:8000'
+    // const URL = 'https://44.207.30.122:8000'
+    const URL = config.apiUrl
 
     // const { id } = useParams();
     // console.log(props.history);

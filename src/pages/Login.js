@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { Spinner } from 'react-bootstrap'
 import '../login.css'
+import config from '../config'
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -10,7 +11,8 @@ const Login = () => {
 
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
-    const URL = 'https://44.207.30.122:8000'
+    // const URL = 'https://44.207.30.122:8000'
+    const URL = config.apiUrl
 
   const loginAdmin = async(e) => {
     e.preventDefault();

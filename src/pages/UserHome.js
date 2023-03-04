@@ -3,6 +3,7 @@ import axios from "axios";
 import { Navigate, Link } from "react-router-dom"
 import { Table, Nav ,Spinner, Modal, Button, Form} from 'react-bootstrap'
 import Moment from 'moment';
+import config from '../config'
 // import { Link } from 'react-router';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -33,7 +34,8 @@ const UserHome = (props) => {
 
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
-    const URL = 'https://44.207.30.122:8000'
+    // const URL = 'https://44.207.30.122:8000'
+    const URL = config.apiUrl
     
     const [nsdate,setNsdate] = useState('');
 

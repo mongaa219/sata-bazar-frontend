@@ -10,6 +10,7 @@ import { faCoffee, faEdit } from '@fortawesome/free-solid-svg-icons'
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import config from '../config'
 
 //  for icons
 // npm i --save @fortawesome/fontawesome-svg-core
@@ -25,7 +26,8 @@ const HomeCity = (props) => {
 
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
-    const URL = 'https://44.207.30.122:8000'
+    // const URL = 'https://44.207.30.122:8000'
+    const URL = config.apiUrl
   
   const getList = async (date) => {
     // filterDateinput(date)

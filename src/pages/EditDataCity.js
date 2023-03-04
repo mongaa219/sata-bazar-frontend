@@ -7,6 +7,7 @@ import Moment from 'moment';
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import config from '../config'
 
 
 const EditData = (props) => {
@@ -25,7 +26,8 @@ const EditData = (props) => {
 
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
-    const URL = 'https://44.207.30.122:8000'
+    // const URL = 'https://44.207.30.122:8000'
+    const URL = config.apiUrl
 
     // const { id } = useParams();
     // console.log(props.history);

@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom"
 import { Table, Nav ,Spinner, Modal, Button, Form} from 'react-bootstrap'
 import Moment from 'moment';
 import DateTimePicker from 'react-datetime-picker';
+import config from '../config'
 
 
 
@@ -19,7 +20,8 @@ const Announcement = (props) => {
 
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
-    const URL = 'https://44.207.30.122:8000'
+    // const URL = 'https://44.207.30.122:8000'
+    const URL = config.apiUrl
     
   const announcementAdd = async (e) => {
     //   e.preveventDefault();

@@ -6,7 +6,7 @@ import Moment from 'moment';
 // import DateTimePicker from 'react-datetime-picker';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import config from '../config'
 
 
 const AddNewData = (props) => {
@@ -21,7 +21,8 @@ const AddNewData = (props) => {
 
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
-    const URL = 'https://44.207.30.122:8000'
+    // const URL = 'https://44.207.30.122:8000'
+    const URL = config.apiUrl
     
   const sattaAdd = async (e) => {
     //   e.preveventDefault();
