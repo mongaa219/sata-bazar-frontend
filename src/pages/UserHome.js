@@ -17,6 +17,7 @@ import "react-datepicker/dist/react-datepicker.css";
 // npm install --save @fortawesome/free-solid-svg-icons
 // npm install --save @fortawesome/react-fontawesome
 
+ 
 
 const UserHome = (props) => {
     const [isLoading,setisLoading] = useState(true);
@@ -256,25 +257,34 @@ const UserHome = (props) => {
   }
   return (
       <>
-        <div className='container'>
-            <div className='row'>
-                <div className='col-md-12'>
-                    <div className='row'>
-                        <div className='col-md-4 ns-top-rd'>Satta King</div>
-                        <div className='col-md-4 ns-top-rd'>Satta Leak</div>
-                        <div className='col-md-4 ns-top-rd'>Result Chart</div>
-                        <div className='col-md-12 bg-black red-color ns-marquee'>
+        <div className='container '>
+            <div className='row '>
+                <div className='col-md-12 '>
+                    <div className='row '>
+                        <div className='col-md-4 ns-top-rd '>Satta King</div>
+                        <div className='col-md-4 ns-top-rd '>Satta Leak</div>
+                        <div className='col-md-4 ns-top-rd '>Result Chart</div>
+                        <div className='col-md-12 bg-black red-color ns-marquee '>
                             <marquee>Nva Savera Satta, Nvasaverasatta, Nva Savera Satta 2020, Nva Savera Satta up, Nva Savera Satta result, Nva Savera Satta result, Nva Savera Satta online, Gali result, Desawar result, Nva Savera Satta chart, Nva Savera Satta live, Gali satta, Deshawar live result, Gali live result, Satta matka, Nva Savera Satta matka, Nva Savera Satta up, Nva Savera Satta 2021 chart, Nva Savera Satta desawar, Nva Savera Satta gali, Gali live result, Disawar live result, Satta Number, Satta Game, Gali Number, Delhi Nva Savera Satta, Satta Bazar, Black Nva Savera Satta, Gali Single Jodi, Black Satta Result, Desawar Single Jodi</marquee>
                         </div>
                     </div>
                 </div>
-                <div className='col-md-12'>
-                    <div className='row mt-3 mb-3'>
+                <div className='col-md-12 '>
+                    <div className='row mt-3 mb-3 '>
                         <div className='col-md-10 center-ns'>
                                 <h2>www.nvasaverasatta.com</h2>
                         </div>
                     </div>
                 </div>
+
+                <div className='col-md-12'>
+
+       
+
+                  <img src='nvasaverasatta.jpg' className="ads"></img>
+                </div>
+
+
                 <div className='col-md-12'>
                     <div className='add-box-1'>
                         <p className="add-box-1-p1">
@@ -285,12 +295,12 @@ const UserHome = (props) => {
                         {/* <p className="add-box-1-p3">सुहाना गुप्ता - सट्टा कंपनी CEO &amp; MD</p> */}
                         <p className="add-box-1-p4" >{adminno}</p>
                         <a href="https://wa.me/9329286908">
-                            <button className='add-box-1-btn1'>
+                            <button className='add-box-1-btn1 '>
                                 <font size="4px"><b>WhatsApp Chat</b></font>
                             </button>
                         </a>
                         <a href={'tel:>'+adminno}>
-                            <button className='add-box-1-btn2'><font size="4px"><b>Call Now</b></font></button>
+                            <button className='add-box-1-btn2 '><font size="4px"><b>Call Now</b></font></button>
                         </a>
                     </div>
 
@@ -307,12 +317,12 @@ const UserHome = (props) => {
                         </p>
                         <p className="add-box-1-p4" >{adminno}</p>
                         <a href="https://wa.me/9329286908">
-                            <button className='add-box-1-btn1'>
+                            <button className='add-box-1-btn1 '>
                                 <font size="4px"><b>WhatsApp Chat</b></font>
                             </button>
                         </a>
                         <a href={'tel:>'+adminno}>
-                            <button className='add-box-1-btn2'><font size="4px"><b>Call Now</b></font></button></a>
+                            <button className='add-box-1-btn2 '><font size="4px"><b>Call Now</b></font></button></a>
                     </div>
 
                 </div>
@@ -369,13 +379,45 @@ const UserHome = (props) => {
                     </div>
                 </div>
                 <div className='col-md-12 mt-1 mb-2'>
-                    <div className='row'>
-                        <div className='col-md-9'>
+                    <div className='row   '>
+                        <div className='col-md-9 '>
+                         
+
+
+                       
+
+
+<div className="center  font-larger bg-white">
+<p>Satte की दुनिया का बादशाह</p>
+<p>--</p>
+<p>Single जोड़ी का बाप</p>
+<p>सीधा कम्पनी से लीक गेम</p>
+<p>--</p>
+<p>सिंगल 1 जोड़ी में गेम पास होने की 101%</p>
+<p>गारण्टी है चैलेंज के साथ</p>
+<p>--</p>
+<p>जो ईमानदार भाई गलत सट्टा</p>
+<p>लगाकर परेशान हो गए है और चाहते है हमसे</p>
+<p>लाखो का प्रॉफिट कमाना तो आज और अभी</p>
+<p>हमसे संपर्क करे</p>
+<p>--</p>
+<p>अभिजीत</p>
+<p>MD SATTA HEAD BRANCH </p>
+<p>--</p>
+<p>Whatsapp करे</p>
+
+
+<p className="center red "><h1 className="">चेतावनी(WARNING)</h1>
+यह साइट सिर्फ और सिर्फ मनोरंजन के लिए बनाई गई है । यह साइट सट्टे से जुड़ी किसी भी गतिविधि को बढ़ावा नहीं देती । सट्टा और जुआं जिस देश या राज्य में प्रतिबंधित है वहां के लोग हमारी साइट को ब्लॉक कर दें | किसी भी लाभ या हानि के लिए आप खुद जिम्मदार होंगे । 
+</p>
+</div>
+
+
                         </div>
-                        <div className='col-md-3'>
-                            <div className='form-group'>
-                                <label>Select Date</label>
-                            <input type="date" className="form-control"
+                        <div className='col-md-3 '>
+                            <div className='form-group '>
+                                <label className=''>Select Date</label>
+                            <input type="date" className="form-control "
                                 value={ nsdate }
                             onChange={(e) => {
                                 setNsdate(e.target.value)
@@ -409,6 +451,11 @@ const UserHome = (props) => {
                                     <th className='ns-city-table columns-ns'>Gali (12:05 AM)</th>
                                     <th className='ns-city-table columns-ns'>Nva Savera (02:50 PM)</th>
                                     <th className='ns-city-table columns-ns'>Savera (03:00 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Super king (4:30 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Shree ganesh (04:30 PM)</th>
+                                    <th className='ns-city-table columns-ns'>New faridabad (07:00 PM)</th>
+                                    
+                                    
                                     {/* <th className='ns-city-table'>Action</th> */}
                                     </tr>
                                 </thead>
@@ -427,6 +474,10 @@ const UserHome = (props) => {
                                             <td className='columns-ns'>{ ls.resultD }</td>
                                             <td className='columns-ns'>{ ls.resultE }</td>
                                             <td className='columns-ns'>{ ls.resultF }</td>
+
+                                            <td className='columns-ns'>{ ls.resultG }</td>
+                                            <td className='columns-ns'>{ ls.resultH }</td>
+                                            <td className='columns-ns'>{ ls.resultI }</td>
                                             {/* <td>
                                                 <Link to={'/edit/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />
@@ -441,6 +492,43 @@ const UserHome = (props) => {
                         </>
                     }
                 </div>
+
+
+<div className='col-md-12 mt-3 mb-3 mt-5'>
+
+<div className='row mt-4 mb-4 bg-black p-2'>
+
+
+<div className="center  font-larger text-white">
+<p>Satte की दुनिया का बादशाह</p>
+<p>--</p>
+<p>Single जोड़ी का बाप</p>
+<p>सीधा कम्पनी से लीक गेम</p>
+<p>--</p>
+<p>सिंगल 1 जोड़ी में गेम पास होने की 101%</p>
+<p>गारण्टी है चैलेंज के साथ</p>
+<p>--</p>
+<p>जो ईमानदार भाई गलत सट्टा</p>
+<p>लगाकर परेशान हो गए है और चाहते है हमसे</p>
+<p>लाखो का प्रॉफिट कमाना तो आज और अभी</p>
+<p>हमसे संपर्क करे</p>
+<p>--</p>
+<p>अभिजीत</p>
+<p>MD SATTA HEAD BRANCH </p>
+<p>--</p>
+<p>Whatsapp करे</p>
+
+
+<p className="center red bg-white"><h1 className="">चेतावनी(WARNING)</h1>
+यह साइट सिर्फ और सिर्फ मनोरंजन के लिए बनाई गई है । यह साइट सट्टे से जुड़ी किसी भी गतिविधि को बढ़ावा नहीं देती । सट्टा और जुआं जिस देश या राज्य में प्रतिबंधित है वहां के लोग हमारी साइट को ब्लॉक कर दें | किसी भी लाभ या हानि के लिए आप खुद जिम्मदार होंगे । 
+</p>
+</div>
+
+</div>
+
+</div>
+
+
                 <div className='col-md-12 mt-3 mb-3 mt-5'>
                     <div className='row mt-4 mb-4'>
                         <div className='col-md-12 ns-head-box'>
@@ -496,10 +584,10 @@ const UserHome = (props) => {
                     }
                 </div>
 
-                <div className='col-md-12 mt-4 mb-5'>
-                    <div className='row'>
-                        <div className='col-md-12 ns-info-bottom'>
-                        <h2>
+                <div className='col-md-12 mt-4 mb-5 '>
+                    <div className='row '>
+                        <div className='col-md-12 ns-info-bottom '>
+                        <h2 className=''> 
                             What is Nva Savera Satta ?
                         </h2>
                         <p>Nva Savera Satta is a kind of lottery game based on numbers from 00 to 99 which comes under "Gambling". The real name of this game is Nva Savera Satta, in which "Satta" means betting or gambling and "Nva Savera" means a pot through which a number is drawn out. In the Nva Savera Satta game, people wager money on their chosen numbers from between 00 to 99. After which, a number is drawn out of the pot. Whichever person's number was drawn out, he would win the prize and people called him as the Nva Savera Satta. Nva Savera Satta is not the name of the game, it was the title used to honor the winner of the Satta Matka. But as this game became popular, people started knowing it by the name of Nva Savera Satta.</p>
