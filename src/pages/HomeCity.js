@@ -133,6 +133,11 @@ const HomeCity = (props) => {
                                     <th className='ns-city-table columns-nst'>Gali</th>
                                     <th className='ns-city-table columns-nst'>Nva Savera</th>
                                     <th className='ns-city-table columns-nst'>Savera</th>
+
+                                    <th className='ns-city-table columns-nst'>Super king</th>
+                                    <th className='ns-city-table columns-nst'>Shree ganesh</th>
+                                    <th className='ns-city-table columns-nst'>New faridabad</th>
+
                                     <th className='ns-city-table columns-nst'>Action</th>
                                     </tr>
                                 </thead>
@@ -150,6 +155,10 @@ const HomeCity = (props) => {
                                             <td className='columns-ns'>{ (!ls.resultD) ? '-' : ls.resultD }</td>
                                             <td className='columns-ns'>{ (!ls.resultE) ? '-' : ls.resultE }</td>
                                             <td className='columns-ns'>{ (!ls.resultF) ? '-' : ls.resultF }</td>
+
+                                            <td className='columns-ns'>{ (!ls.resultG) ? '-' : ls.resultG }</td>
+                                            <td className='columns-ns'>{ (!ls.resultH) ? '-' : ls.resultH }</td>
+                                            <td className='columns-ns'>{ (!ls.resultI) ? '-' : ls.resultI }</td>
                                             <td className='columns-ns'>
                                                 <Link to={'/edit-city/'+ls._id}>
                                                     <FontAwesomeIcon icon={faEdit} />

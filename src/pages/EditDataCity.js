@@ -24,6 +24,11 @@ const EditData = (props) => {
     const [resultE, setResultE] = useState('');
     const [resultF, setResultF] = useState('');
 
+    const [resultG, setResultG] = useState('');
+    const [resultH, setResultH] = useState('');
+    const [resultI, setResultI] = useState('');
+
+
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
     // const URL = 'https://44.207.30.122:8000'
@@ -60,6 +65,11 @@ const EditData = (props) => {
             setResultE(data.data.resultE);
             setResultF(data.data.resultF);
 
+            setResultG(data.data.resultG);
+            setResultH(data.data.resultH);
+            setResultI(data.data.resultI);
+
+
           }).catch((er) => {
               console.log(er);
               if (er.response.status == 401) {
@@ -85,7 +95,11 @@ const EditData = (props) => {
         resultC : resultC,
         resultD : resultD,
         resultE : resultE,
-        resultF : resultF
+        resultF : resultF,
+
+        resultG : resultG,
+        resultH : resultH,
+        resultI : resultI
       };
       let token = localStorage.getItem('loginToken')
     const headers = {
@@ -168,6 +182,24 @@ const EditData = (props) => {
                             <label >Savera</label>
                             <input type="number" className="form-control" name="resultF" onChange={(e) => setResultF(e.target.value)} value={resultF} placeholder="Savera" />
                         </div>
+
+                        <div className="mb-3 mt-3">
+                            <label >Super king</label>
+                            <input type="number" className="form-control" name="resultG" onChange={(e) => setResultG(e.target.value)} value={resultG} placeholder="Super king" />
+                        </div>
+
+
+                        <div className="mb-3 mt-3">
+                            <label >Shree ganesh</label>
+                            <input type="number" className="form-control" name="resultH" onChange={(e) => setResultH(e.target.value)} value={resultH} placeholder="Shree ganesh" />
+                        </div>
+
+
+                        <div className="mb-3 mt-3">
+                            <label >New faridabad</label>
+                            <input type="number" className="form-control" name="resultI" onChange={(e) => setResultI(e.target.value)} value={resultI} placeholder="New faridabad" />
+                        </div>
+
                         <button type="submit" className="btn btn-primary">
                             {!isLoading && 'Submit'}
                             { isLoading && 
