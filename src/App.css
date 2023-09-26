@@ -97,6 +97,10 @@ body {
  
     height: 150px;
   }
+
+  .columns-ns {
+    font-size: 9px;
+  }
 }
 
 .center{
