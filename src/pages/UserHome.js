@@ -30,6 +30,11 @@ const UserHome = (props) => {
     const [siteTitle2,setSiteTitle2] = useState('');
     const [siteAnnouncement2,setSiteAnnouncement2] = useState('');
 
+
+    const [siteTitle3,setSiteTitle3] = useState('');
+    const [siteAnnouncement3,setSiteAnnouncement3] = useState('');
+    
+
     const [adminno,setadminno] = useState('');
     let ab = 0;
 
@@ -59,6 +64,11 @@ const UserHome = (props) => {
 
                 setSiteTitle2(rs.title2 || 'Nva Savera')
                 setSiteAnnouncement2(rs.description2 || '')
+
+                setSiteTitle3(rs.title3 || 'Nva Savera')
+                setSiteAnnouncement3(rs.description3 || '')
+
+                 
 
                 setadminno(rs.adminno || '')
             }).catch((er) => {
@@ -357,8 +367,12 @@ const UserHome = (props) => {
                         <div className='center bg-black'>
                                 <h2 className='white-color'>{ siteTitle }</h2>
                                 <h3 className='yellow-color'>{ siteAnnouncement }</h3>
+
                                 <h2 className='white-color'>{ siteTitle2 }</h2>
                                 <h3 className='yellow-color'>{ siteAnnouncement2 }</h3>
+
+                                <h2 className='white-color'>{ siteTitle3 }</h2>
+                                <h3 className='yellow-color'>{ siteAnnouncement3 }</h3>
                                 {/* <h2 className='white-color'>{ siteTitle }</h2>
                                 <h3 className='yellow-color'>{ siteAnnouncement }</h3>
                                 <h2 className='white-color'>{ siteTitle }</h2>

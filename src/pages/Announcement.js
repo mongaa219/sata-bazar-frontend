@@ -18,6 +18,9 @@ const Announcement = (props) => {
     const [title2, setTitle2] = useState('');
     const [description2, setDescription2] = useState('');
 
+    const [title3, setTitle3] = useState('');
+    const [description3, setDescription3] = useState('');
+
     // const URL = 'http://localhost:3003'
     // const URL = 'https://satta-backend.herokuapp.com'
     // const URL = 'https://44.207.30.122:8000'
@@ -32,6 +35,8 @@ const Announcement = (props) => {
         description : description,
         title2 : title2,
         description2 : description2,
+        title3 : title3,
+        description3 : description3,
         adminno : adminno,
         importanttext:'--'
       };
@@ -81,6 +86,8 @@ const Announcement = (props) => {
             setDescription(data.data.description);
             setTitle2(data.data.title2 || '');
             setDescription2(data.data.description2 || '');
+            setTitle3(data.data.title3 || '');
+            setDescription3(data.data.description3 || '');
             
             setAdminno(data.data.adminno)
         }
@@ -125,6 +132,16 @@ const Announcement = (props) => {
                         <div className="mb-3 mt-3">
                             <label >Announcement 2</label>
                             <textarea className="form-control" rows={1}  placeholder="Enter Description 2" name="Description" onChange={(e) => setDescription2(e.target.value)} value={description2}></textarea>
+                        </div>
+
+
+                        <div className="mb-3 mt-3">
+                            <label >Site Title 3</label>
+                            <input type="text" className="form-control"  placeholder="Enter Title 3" name="title" onChange={(e) => setTitle3(e.target.value)} value={title3}/>
+                        </div>
+                        <div className="mb-3 mt-3">
+                            <label >Announcement 3</label>
+                            <textarea className="form-control" rows={1}  placeholder="Enter Description 3" name="Description" onChange={(e) => setDescription3(e.target.value)} value={description3}></textarea>
                         </div>
                         <button type="submit" className="btn btn-primary">
                             {!isLoading && 'Save'}
