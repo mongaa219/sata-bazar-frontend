@@ -369,9 +369,9 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
             <div className='row '>
                 <div className='col-md-12 '>
                     <div className='row '>
-                        <div className='col-md-4 ns-top-rd '>Satta King</div>
-                        <div className='col-md-4 ns-top-rd '>Satta Leak</div>
-                        <div className='col-md-4 ns-top-rd '>Result Chart</div>
+                        <div className='col-md-4 ns-top-rd bg-white'>Satta King</div>
+                        <div className='col-md-4 ns-top-rd bg-white'>Satta Leak</div>
+                        <div className='col-md-4 ns-top-rd bg-white'>Result Chart</div>
                         <div className='col-md-12 bg-black red-color ns-marquee '>
                             <marquee>Nva Savera Satta, Nvasaverasatta, Nva Savera Satta 2020, Nva Savera Satta up, Nva Savera Satta result, Nva Savera Satta result, Nva Savera Satta online, Gali result, Desawar result, Nva Savera Satta chart, Nva Savera Satta live, Gali satta, Deshawar live result, Gali live result, Satta matka, Nva Savera Satta matka, Nva Savera Satta up, Nva Savera Satta 2021 chart, Nva Savera Satta desawar, Nva Savera Satta gali, Gali live result, Disawar live result, Satta Number, Satta Game, Gali Number, Delhi Nva Savera Satta, Satta Bazar, Black Nva Savera Satta, Gali Single Jodi, Black Satta Result, Desawar Single Jodi</marquee>
                         </div>
@@ -379,7 +379,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                 </div>
                 <div className='col-md-12 '>
                     <div className='row mt-3 mb-3 '>
-                        <div className='col-md-10 center-ns'>
+                        <div className='col-md-10 center-ns bg-white'>
                                 <h2>www.nvasaverasatta.com</h2>
                         </div>
                     </div>
@@ -551,7 +551,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                     }
                     {!isLoading && 
                         <> 
-                        <div className='col-md-12 '><div className='row red py-3 text-uppercase table-heading-city-ns text-center'><h1>{month} RECORD CHART {year}</h1></div></div>
+                        <div className='col-md-12 '><div className='row darkBlue py-3 text-uppercase table-heading-city-ns text-center'><h1>{month} RECORD CHART {year}</h1></div></div>
                             <Table bordered hover >
                                 <thead>
                                     <tr>
@@ -651,7 +651,8 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                     }
                     {!isLoading && 
                         <> 
-                        <div className='col-md-12 '><div className='row red py-3 text-uppercase table-heading-city-ns text-center'><h1>{last_month} RECORD CHART {last_year}</h1></div></div>
+                        {/* {last_month} */}
+                        <div className='col-md-12 '><div className='row darkBlue py-3 text-uppercase table-heading-city-ns text-center'><h1> SEPTEMBER RECORD CHART {last_year}</h1></div></div>
                             <Table bordered hover >
                                 <thead>
                                     <tr>
