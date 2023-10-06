@@ -23,6 +23,8 @@ const UserHome = (props) => {
     const [isLoading,setisLoading] = useState(true);
     const [sattaList, setSattaList] = useState([]);
     const [sattaListCity, setSattaListCity] = useState([]);
+    const [sattaListCity_last, setSattaListCity_last] = useState([]);
+    
 
     const [siteTitle,setSiteTitle] = useState('Nva Savera');
     const [siteAnnouncement,setSiteAnnouncement] = useState('');
@@ -45,7 +47,25 @@ const UserHome = (props) => {
     
     const [nsdate,setNsdate] = useState('');
 
-    const getAnnounement = async () => {
+    // const month = nsdate.date.toLocaleString("en-us", { month: "long" });
+    // const day = nsdate.date.toLocaleString("en-us", { day: "2-digit" });
+    // const year = nsdate.date.getFullYear();
+    //const month = Moment(nsdate).toLocaleString('en-us',{month:'long', year:'numeric'})
+
+    const today = new Date(nsdate); // yyyy-mm-dd
+
+// Getting short month name (e.g. "Oct")
+const month = today.toLocaleString('default', { month: 'long' });
+const year = today.toLocaleString('default', { year: 'numeric' });
+ 
+const last_mon = new Date(today.setMonth(today.getMonth() - 1)); 
+
+const last_month = last_mon.toLocaleString('default', { month: 'long' });
+const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
+
+
+
+     const getAnnounement = async () => {
         let token = localStorage.getItem('loginToken')
         // setisLoading(true)
         const headers = {
@@ -169,6 +189,84 @@ const UserHome = (props) => {
           d = makeTime()
       }
       let newMonth = Moment(d).format('YYYY-MM')
+
+
+      var ProData = "2023-09";
+      await axios.get(URL+'/api/city/get?date='+ProData,{
+        headers
+    }).then((data) => {
+      setisLoading(false)
+          // console.log(' ======================================================================');
+          // console.log('city');
+          // console.log(data.data.length);
+          // console.log(data.data);
+          // console.log(' ======================================================================');
+          // let cityData = data.data;
+          let cityData = [];
+          // let startdate = data.data[data.data.length - 1].resultDate || new Date();
+          let month = 0;
+          // let startdate = newMonth+'-01T'
+          let startdate = Moment(ProData+'-01T','YYYY-MM-DD'); 
+          for (let i = 0; i <= 31; i++) {
+              // let element;
+              // console.log('date starting ==> '+Moment(startdate).format('YYYY-MM-DD'));
+              // console.log('month == ',month);
+              if(month == 0)
+              {
+                  month = Moment(startdate).format('MM');
+                  // console.log('month ==in if === ',month);
+              }
+              if(month != Moment(startdate).format('MM'))
+              {
+                  // console.log('month == break',month);
+                  break;
+              }
+              // console.log('date entered ==> '+Moment(startdate).format('YYYY-MM-DD'));
+              // console.log('find data ==> '+Moment(startdate).format('YYYY-MM-DD'),filterData(data.data,startdate))
+              // console.log('find data ==> ',filterData(data.data,startdate))
+              const findDate = filterData(data.data,startdate);
+              if(findDate)
+              {
+                  // console.log(i,findDate);
+                  cityData.push(findDate);
+              }
+              else
+              {
+                  const element = {
+                       _id : '',
+                       resultA : '',
+                       resultB : '',
+                       resultC : '',
+                       resultD : '',
+                       resultE : '',
+                       resultF : '',
+                       resultDate : startdate,
+                       resultDateTime : '',
+                       createdAt : '',
+                       updatedAt : '',
+                   };
+
+                   cityData.push(element);
+              }
+              startdate = Moment(startdate, "DD-MM-YYYY").add(1, 'days');
+              // }
+              // startdate = Moment(startdate, "DD-MM-YYYY").add(1, 'days');
+          }
+          setSattaListCity_last(cityData)
+    }).catch((er) => {
+        console.log('city data === >  ',er);
+        setisLoading(false)
+        if(er.response)
+        {
+            if (er.response.status == 401) {
+                console.log('getting eror ');
+                console.log(er.response.status);
+            }
+        }
+    })
+
+
+
       await axios.get(URL+'/api/city/get?date='+newMonth,{
           headers
       }).then((data) => {
@@ -347,10 +445,10 @@ const UserHome = (props) => {
                 </div>
                 <div className='col-md-12'>
                     <div className='row mt-4 mb-4'>
-                        <div className='ns-head-box'>
+                        <div className='ns-head-box bg-white text-black'>
                             <center>
                                 <p>
-                                    <h4>
+                                    <h4 class="text-white">
                                         To play a game please contact to admin (Nva Savera)
                                     </h4>
                                 </p>
@@ -362,26 +460,22 @@ const UserHome = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className='col-md-12'>
-                    <div className='row mt-4 mb-4'>
-                        <div className='center bg-black'>
-                                <h2 className='white-color'>{ siteTitle }</h2>
-                                <h3 className='yellow-color'>{ siteAnnouncement }</h3>
+                <div className='col-md-12 mb-4'>
+                        <div className='center w-100 bg-white'>
+                                <h1 className='red-color'>{ siteTitle }</h1>
+                                <h1 className='green-color'>{ siteAnnouncement }</h1>
 
-                                <h2 className='white-color'>{ siteTitle2 }</h2>
-                                <h3 className='yellow-color'>{ siteAnnouncement2 }</h3>
+                                <h1 className='red-color'>{ siteTitle2 }</h1>
+                                <h1 className='green-color'>{ siteAnnouncement2 }</h1>
 
-                                <h2 className='white-color'>{ siteTitle3 }</h2>
-                                <h3 className='yellow-color'>{ siteAnnouncement3 }</h3>
+                                <h1 className='red-color'>{ siteTitle3 }</h1>
+                                <h1 className='green-color'>{ siteAnnouncement3 }</h1>
                                 {/* <h2 className='white-color'>{ siteTitle }</h2>
                                 <h3 className='yellow-color'>{ siteAnnouncement }</h3>
                                 <h2 className='white-color'>{ siteTitle }</h2>
                                 <h3 className='yellow-color'>{ siteAnnouncement }</h3> */}
-                        </div>
-                        <div className='col-md-1'>
-                            
-                        </div>
-                        <div className='col-md-1'></div>
+                        
+                         
                     </div>
                 </div>
                 {/* <div className='col-md-12'>
@@ -444,6 +538,11 @@ const UserHome = (props) => {
                         </div>
                     </div>
                 </div>
+                
+
+             
+                
+              
 
                 <div className={(!isLoading) ? 'col-md-12 ':'col-md-12 loader-ns'}>
                     {isLoading && <Spinner animation="border" role="status" className='ns-lader-class'>
@@ -452,7 +551,8 @@ const UserHome = (props) => {
                     }
                     {!isLoading && 
                         <> 
-                            <Table striped bordered hover >
+                        <div className='col-md-12 '><div className='row red py-3 text-uppercase table-heading-city-ns text-center'><h1>{month} RECORD CHART {year}</h1></div></div>
+                            <Table bordered hover >
                                 <thead>
                                     <tr>
                                     {/* <th className='ns-city-table'>#</th> */}
@@ -541,6 +641,73 @@ const UserHome = (props) => {
 </div>
 
 </div>
+
+
+
+<div className={(!isLoading) ? 'col-md-12 ':'col-md-12 loader-ns'}>
+                    {isLoading && <Spinner animation="border" role="status" className='ns-lader-class'>
+                            <span className="visually-hidden loader-ns">Loading...</span>
+                            </Spinner>
+                    }
+                    {!isLoading && 
+                        <> 
+                        <div className='col-md-12 '><div className='row red py-3 text-uppercase table-heading-city-ns text-center'><h1>{last_month} RECORD CHART {last_year}</h1></div></div>
+                            <Table bordered hover >
+                                <thead>
+                                    <tr>
+                                    {/* <th className='ns-city-table'>#</th> */}
+                                    {/* <th className='ns-city-table'>Title</th> */}
+                                    {/* <th className='ns-city-table'>Description</th> */}
+                                    <th className='ns-city-table high columns-nst'>Date</th>
+                                    <th className='ns-city-table columns-ns'>Disawer (05:00 AM)</th>
+                                    <th className='ns-city-table columns-ns'>Fridabad (06:30 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Gaziyabad (09:00 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Gali (12:05 AM)</th>
+                                    <th className='ns-city-table columns-ns'>Nva Savera (02:50 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Savera (03:00 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Super king (4:30 PM)</th>
+                                    <th className='ns-city-table columns-ns'>Shree ganesh (04:30 PM)</th>
+                                    <th className='ns-city-table columns-ns'>New faridabad (07:00 PM)</th>
+                                    
+                                    
+                                    {/* <th className='ns-city-table'>Action</th> */}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    { sattaListCity_last.map((ls,i) => {
+                                        ab = i + 1;
+                                        return (
+                                        <tr key={i}>
+                                            {/* <td>{ i + 1}</td> */}
+                                            {/* <td>{ ls.title }</td> */}
+                                            {/* <td>{ ls.description }</td> */}
+                                            <td className='ns-city-table hight'>{ (!ls.resultDate ) ? '-' : Moment(ls.resultDate).format('DD-MM') }</td>
+                                            <td className='columns-ns'>{ ls.resultA }</td>
+                                            <td className='columns-ns'>{ ls.resultB }</td>
+                                            <td className='columns-ns'>{ ls.resultC }</td>
+                                            <td className='columns-ns'>{ ls.resultD }</td>
+                                            <td className='columns-ns'>{ ls.resultE }</td>
+                                            <td className='columns-ns'>{ ls.resultF }</td>
+
+                                            <td className='columns-ns'>{ ls.resultG }</td>
+                                            <td className='columns-ns'>{ ls.resultH }</td>
+                                            <td className='columns-ns'>{ ls.resultI }</td>
+                                            {/* <td>
+                                                <Link to={'/edit/'+ls._id}>
+                                                    <FontAwesomeIcon icon={faEdit} />
+                                                </Link>
+                                            </td> */}
+                                        </tr>
+
+                                        )
+                                    }) }
+                                </tbody>
+                            </Table>
+                        </>
+                    }
+                </div>
+
+
 
 
                 <div className='col-md-12 mt-3 mb-3 mt-5'>

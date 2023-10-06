@@ -110,6 +110,19 @@ body {
 .red{
   color:red;
 }
+.green-color
+{
+  color: #ec0606;
+  font-size: 34px;
+  font-weight: bold;
+}
+.red-color{
+
+    color: rgb(6, 0, 0)!important;
+    font-size: 34px;
+    font-weight: bold;
+
+}
 .overflow-0,.overflow-0 p{
   overflow: auto;
 }
