@@ -372,7 +372,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                         <div className='col-md-4 ns-top-rd bg-white'>Satta King</div>
                         <div className='col-md-4 ns-top-rd bg-white'>Satta Leak</div>
                         <div className='col-md-4 ns-top-rd bg-white'>Result Chart</div>
-                        <div className='col-md-12 bg-black red-color ns-marquee '>
+                        <div className='col-md-12 bg-black red-color ns-marquee text-red'>
                             <marquee>Nva Savera Satta, Nvasaverasatta, Nva Savera Satta 2020, Nva Savera Satta up, Nva Savera Satta result, Nva Savera Satta result, Nva Savera Satta online, Gali result, Desawar result, Nva Savera Satta chart, Nva Savera Satta live, Gali satta, Deshawar live result, Gali live result, Satta matka, Nva Savera Satta matka, Nva Savera Satta up, Nva Savera Satta 2021 chart, Nva Savera Satta desawar, Nva Savera Satta gali, Gali live result, Disawar live result, Satta Number, Satta Game, Gali Number, Delhi Nva Savera Satta, Satta Bazar, Black Nva Savera Satta, Gali Single Jodi, Black Satta Result, Desawar Single Jodi</marquee>
                         </div>
                     </div>

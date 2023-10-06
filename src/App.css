@@ -127,6 +127,9 @@ body {
     font-weight: bold;
 
 }
+.text-red{
+  color: #ed3c33!important;
+}
 .overflow-0,.overflow-0 p{
   overflow: auto;
 }
