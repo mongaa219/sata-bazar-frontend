@@ -551,7 +551,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                     }
                     {!isLoading && 
                         <> 
-                        <div className='col-md-12 '><div className='row darkBlue py-3 text-uppercase table-heading-city-ns text-center'><h1>{month} RECORD CHART {year}</h1></div></div>
+                        <div className='row darkBlue py-3 text-uppercase table-heading-city-ns text-center'><h1>{month} RECORD CHART {year}</h1></div>
                             <Table bordered hover >
                                 <thead>
                                     <tr>
@@ -652,7 +652,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                     {!isLoading && 
                         <> 
                         {/* {last_month} */}
-                        <div className='col-md-12 '><div className='row darkBlue py-3 text-uppercase table-heading-city-ns text-center'><h1> SEPTEMBER RECORD CHART {last_year}</h1></div></div>
+                        <div className='row darkBlue py-3 text-uppercase table-heading-city-ns text-center'><h1> SEPTEMBER RECORD CHART {last_year}</h1></div>
                             <Table bordered hover >
                                 <thead>
                                     <tr>

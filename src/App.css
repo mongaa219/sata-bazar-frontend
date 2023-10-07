@@ -98,8 +98,8 @@ body {
     height: 150px;
   }
 
-  .columns-ns {
-    font-size: 9px;
+  .columns-ns,td.ns-city-table,th.ns-city-table {
+    font-size: 8px!important;
   }
 }
 
