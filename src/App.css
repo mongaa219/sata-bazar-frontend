@@ -129,6 +129,7 @@ body {
 }
 .text-red{
   color: #ed3c33!important;
+  font-size: 18px!important;
 }
 .overflow-0,.overflow-0 p{
   overflow: auto;

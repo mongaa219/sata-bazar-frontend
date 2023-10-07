@@ -378,7 +378,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                     </div>
                 </div>
                 <div className='col-md-12 '>
-                    <div className='row mt-3 mb-3 '>
+                    <div className='row mt-0 mb-3 '>
                         <div className='col-md-10 center-ns bg-white'>
                                 <h2>www.nvasaverasatta.com</h2>
                         </div>
