@@ -496,7 +496,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
 
 
 <div className="center  font-larger bg-white">
-<p>Satte की दुनिया का बादशाह</p>
+{/* <p>Satte की दुनिया का बादशाह</p>
 <p>--</p>
 <p>Single जोड़ी का बाप</p>
 <p>सीधा कम्पनी से लीक गेम</p>
@@ -512,7 +512,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
 <p>अभिजीत</p>
 <p>MD SATTA HEAD BRANCH </p>
 <p>--</p>
-<p>Whatsapp करे</p>
+<p>Whatsapp करे</p> */}
 
 
 <p className="center red "><h1 className="">चेतावनी(WARNING)</h1>
@@ -614,6 +614,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
 
 
 <div className="center  font-larger text-white">
+
 <p>Satte की दुनिया का बादशाह</p>
 <p>--</p>
 <p>Single जोड़ी का बाप</p>
@@ -633,9 +634,9 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
 <p>Whatsapp करे</p>
 
 
-<p className="center red bg-white"><h1 className="">चेतावनी(WARNING)</h1>
+{/* <p className="center red bg-white"><h1 className="">चेतावनी(WARNING)</h1>
 यह साइट सिर्फ और सिर्फ मनोरंजन के लिए बनाई गई है । यह साइट सट्टे से जुड़ी किसी भी गतिविधि को बढ़ावा नहीं देती । सट्टा और जुआं जिस देश या राज्य में प्रतिबंधित है वहां के लोग हमारी साइट को ब्लॉक कर दें | किसी भी लाभ या हानि के लिए आप खुद जिम्मदार होंगे । 
-</p>
+</p> */}
 </div>
 
 </div>
