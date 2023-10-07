@@ -461,14 +461,14 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                     </div>
                 </div>
                 <div className='col-md-12 mb-4'>
-                        <div className='center w-100 bg-white'>
-                                <h1 className='red-color'>{ siteTitle }</h1>
+                        <div className='center w-100'>
+                                <h1 className='red-color text-white'>{ siteTitle }</h1>
                                 <h1 className='green-color'>{ siteAnnouncement }</h1>
 
-                                <h1 className='red-color'>{ siteTitle2 }</h1>
+                                <h1 className='red-color  text-white'>{ siteTitle2 }</h1>
                                 <h1 className='green-color'>{ siteAnnouncement2 }</h1>
 
-                                <h1 className='red-color'>{ siteTitle3 }</h1>
+                                <h1 className='red-color  text-white'>{ siteTitle3 }</h1>
                                 <h1 className='green-color'>{ siteAnnouncement3 }</h1>
                                 {/* <h2 className='white-color'>{ siteTitle }</h2>
                                 <h3 className='yellow-color'>{ siteAnnouncement }</h3>
