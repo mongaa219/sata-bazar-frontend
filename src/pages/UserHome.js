@@ -506,41 +506,8 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                     </div>
                 </div>
                 <div className='col-md-12 mt-1 mb-2'>
-                    <div className='row   '>
-                        <div className='col-md-9 '>
-                         
-
-
+                    <div className='row  justify-content-center  mb-3 '>
                        
-
-
-<div className="center  font-larger bg-white">
-{/* <p>Satte की दुनिया का बादशाह</p>
-<p>--</p>
-<p>Single जोड़ी का बाप</p>
-<p>सीधा कम्पनी से लीक गेम</p>
-<p>--</p>
-<p>सिंगल 1 जोड़ी में गेम पास होने की 101%</p>
-<p>गारण्टी है चैलेंज के साथ</p>
-<p>--</p>
-<p>जो ईमानदार भाई गलत सट्टा</p>
-<p>लगाकर परेशान हो गए है और चाहते है हमसे</p>
-<p>लाखो का प्रॉफिट कमाना तो आज और अभी</p>
-<p>हमसे संपर्क करे</p>
-<p>--</p>
-<p>अभिजीत</p>
-<p>MD SATTA HEAD BRANCH </p>
-<p>--</p>
-<p>Whatsapp करे</p> */}
-
-
-<p className="center red "><h1 className="">चेतावनी(WARNING)</h1>
-यह साइट सिर्फ और सिर्फ मनोरंजन के लिए बनाई गई है । यह साइट सट्टे से जुड़ी किसी भी गतिविधि को बढ़ावा नहीं देती । सट्टा और जुआं जिस देश या राज्य में प्रतिबंधित है वहां के लोग हमारी साइट को ब्लॉक कर दें | किसी भी लाभ या हानि के लिए आप खुद जिम्मदार होंगे । 
-</p>
-</div>
-
-
-                        </div>
                         <div className='col-md-3 '>
                             <div className='form-group '>
                                 <label className=''>Select Date</label>
@@ -731,7 +698,48 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
 
 
 
+<div className='row'>
+<div className='col-md-12 mt-4 '>
+                         
+
+
+                       
+
+
+                         <div className="center  font-larger bg-white">
+                         {/* <p>Satte की दुनिया का बादशाह</p>
+                         <p>--</p>
+                         <p>Single जोड़ी का बाप</p>
+                         <p>सीधा कम्पनी से लीक गेम</p>
+                         <p>--</p>
+                         <p>सिंगल 1 जोड़ी में गेम पास होने की 101%</p>
+                         <p>गारण्टी है चैलेंज के साथ</p>
+                         <p>--</p>
+                         <p>जो ईमानदार भाई गलत सट्टा</p>
+                         <p>लगाकर परेशान हो गए है और चाहते है हमसे</p>
+                         <p>लाखो का प्रॉफिट कमाना तो आज और अभी</p>
+                         <p>हमसे संपर्क करे</p>
+                         <p>--</p>
+                         <p>अभिजीत</p>
+                         <p>MD SATTA HEAD BRANCH </p>
+                         <p>--</p>
+                         <p>Whatsapp करे</p> */}
+                         
+                         
+                         <p className="center red "><h1 className="">चेतावनी(WARNING)</h1>
+                         यह साइट सिर्फ और सिर्फ मनोरंजन के लिए बनाई गई है । यह साइट सट्टे से जुड़ी किसी भी गतिविधि को बढ़ावा नहीं देती । सट्टा और जुआं जिस देश या राज्य में प्रतिबंधित है वहां के लोग हमारी साइट को ब्लॉक कर दें | किसी भी लाभ या हानि के लिए आप खुद जिम्मदार होंगे । 
+                         </p>
+                         </div>
+                         
+                         
+                                                 </div>
+
+</div>
+
                 <div className='col-md-12 mt-0 mb-0'>
+
+
+                    
                     <div className='row mt-4 mb-4'>
                         <div className='col-md-12 ns-head-box'>
                             <center>
