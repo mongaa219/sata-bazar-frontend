@@ -45,11 +45,12 @@ const UserHome = (props) => {
         const year = today.getFullYear();
         const date = today.getDate();
 
-        const hours = today.toLocaleString('en-US', { hour: 'numeric', hour12: true });
-        const min =  today.toLocaleString('en-US', { minutes: 'numeric', hour12: true });
+
+        const analogue = today.toLocaleString('en-US', { hour: 'numeric',minute: 'numeric', hour12: true });
+       // const min =  today.toLocaleString('en-US', { minutes: 'numeric', hour12: true });
         
 
-        return `${month} ${date}, ${year} ${hours}:${min}`;
+        return `${month} ${date}, ${year} ${analogue}`;
       }
 
 
@@ -479,7 +480,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                 </div>
                 <div className='col-md-12 mb-4'>
                         <div className='center w-100'>
-                            {/* <p>{getNowDateTime()}</p> */}
+                            <h4 className='text-white mb-4'>{getNowDateTime()}</h4>
                                 <h1 className='red-color text-white'>{ siteTitle }</h1>
                                 <h1 className='green-color'>{ siteAnnouncement }</h1>
 
@@ -626,12 +627,12 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                 </div>
 
 
-<div className='col-md-12 mt-3 mb-3 mt-5'>
+<div className='col-md-12 mt-3 mb-3 mt-5 d-none'>
 
 <div className='row mt-4 mb-4 bg-black p-2'>
 
 
-<div className="center  font-larger text-white">
+<div className="center  font-larger text-white ">
 
 <p>Satte की दुनिया का बादशाह</p>
 <p>--</p>
@@ -672,7 +673,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                         <> 
                         {/* {last_month} */}
                         <div className='row darkBlue py-3 text-uppercase table-heading-city-ns text-center'><h1> SEPTEMBER RECORD CHART {last_year}</h1></div>
-                            <Table bordered hover >
+                            <Table bordered hover className='mb-0'>
                                 <thead>
                                     <tr>
                                     {/* <th className='ns-city-table'>#</th> */}
@@ -730,7 +731,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
 
 
 
-                <div className='col-md-12 mt-3 mb-3 mt-5'>
+                <div className='col-md-12 mt-0 mb-0'>
                     <div className='row mt-4 mb-4'>
                         <div className='col-md-12 ns-head-box'>
                             <center>
