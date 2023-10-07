@@ -37,6 +37,23 @@ const UserHome = (props) => {
     const [siteAnnouncement3,setSiteAnnouncement3] = useState('');
     
 
+    function getNowDateTime() {
+        const today = new Date();
+        const month = today.toLocaleString('default', { month: 'long' });
+        
+
+        const year = today.getFullYear();
+        const date = today.getDate();
+
+        const hours = today.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+        const min =  today.toLocaleString('en-US', { minutes: 'numeric', hour12: true });
+        
+
+        return `${month} ${date}, ${year} ${hours}:${min}`;
+      }
+
+
+
     const [adminno,setadminno] = useState('');
     let ab = 0;
 
@@ -462,6 +479,7 @@ const last_year = last_mon.toLocaleString('default', { year: 'numeric' });
                 </div>
                 <div className='col-md-12 mb-4'>
                         <div className='center w-100'>
+                            {/* <p>{getNowDateTime()}</p> */}
                                 <h1 className='red-color text-white'>{ siteTitle }</h1>
                                 <h1 className='green-color'>{ siteAnnouncement }</h1>
 
