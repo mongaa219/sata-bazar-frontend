@@ -38,6 +38,8 @@ return (
       <Route path='/edit-city/:id'  element={<EditDataCity />} />
       <Route path='/announcement'  element={<Announcement />} />
       <Route path='/logout'  element={<Logout />} />
+      <Route path='/NvaSaveraSattaRecordChart2021'  element={<UserHome />} />
+      
       {/* <Route path='/about' component={About} />
       <Route path='/eventqs' component={Events} />
       <Route path='/annual' component={AnnualReport} />
